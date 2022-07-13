@@ -1,0 +1,36 @@
+name: Generate static files
+
+on:
+  push:
+    branches: [ 'main' ]
+
+  workflow_dispatch:
+
+jobs:
+  generate-static-files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: "Clean up static files"
+        run: rm -rf _static
+
+      - name: "make _static directory"
+        run: mkdir _static
+
+      - name: "Install npm"
+        run: sudo apt install npm
+
+      - name: "Install reveal-md"
+        run: npm install --location=global reveal-md
+
+      - name: "Build static files"
+        run: reveal-md --static _static/
+
+      - name: "Deploy"
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: _static
