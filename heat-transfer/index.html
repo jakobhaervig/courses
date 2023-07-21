@@ -1,48 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Course in Heat Transfer </title>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <meta name="description" content="Heat Transfer; Aalborg University (AAU)">
+  <meta name="keywords" content="Interactive Lecture, Heat Transfer">
+  <meta name="author" content="Jakob Hærvig">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.min.css" integrity="sha512-V5fKCVKOFy36w8zJmLzPH5R6zU6KvuHOvxfMRczx2ZeqTjKRGSBO9yiZjCKEJS3n6EmENwrH/xvSwXqxje+VVA==" crossorigin="anonymous" referrerpolicy="no-referrer"/-->
+  <link rel="stylesheet" href="static/css/reveal.css">
+  <link rel="stylesheet" href="static/css/rub.css">
+</head>
 
-		<link rel="stylesheet" href="../revealjs/dist/reset.css">
-		<link rel="stylesheet" href="../revealjs/dist/reveal.css">
-		<link rel="stylesheet" href="../revealjs/dist/theme/black.css">
-		<link rel="stylesheet" href="../overrides/custom.css"/>
+<body>
+  <!--Footer-->
+  <div id="footer" class="footer">
+    <span class="element">Course in Heat Transfer | Aalborg University (AAU) | <a href="https://haervig.com">haervig.com</a> | Jakob Hærvig, <script>document.write( new Date().getFullYear() );</script> </span>
+  </div>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="../revealjs/plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
-					<h2>My presentation 1</h2>
-				</section>
-				<section>
-					<h2>Slide 1</h2>
-				</section>
-				<section>
-					<h2>Slide 2</h2>
-				</section>
-			</div>
-		</div>
+  <!--slides-->
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown="slides/lecture-03/000-about.html">
+      </section>
+      <section>
+        <h1>Course in Heat Transfer</h1>
+        <h4>Lecture 3 | <script>document.write( new Date().getFullYear() );</script> </h4>
+      </section>
+      <section data-markdown="slides/lecture-03/002-why-numerical-methods.html">
+      </section>
+      <section data-markdown="slides/lecture-03/003-the-heat-balance-method.html">
+      </section>
+      <!-- <section data-markdown="slides/lecture-03/003-roots-and-weights-for-su3.html">
+      </section> -->
+      <!-- <section data-markdown="slides/lecture-03/004-positive-and-simple.html">
+      </section> -->
+    </div>
+  </div>
 
-		<script src="../revealjs/dist/reveal.js"></script>
-		<script src="../revealjs/plugin/notes/notes.js"></script>
-		<script src="../revealjs/plugin/markdown/markdown.js"></script>
-		<script src="../revealjs/plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+  <!--JS setup-->
+  <script src="static/js/reveal.js"></script>
+  <script src="static/js/math/math.js"></script>
+  <script src="static/js/markdown.js"></script>
+  <script src="static/js/search.js"></script>
+  <script src="static/js/audio-slideshow.js"></script>
+  <!--CDN: if you don't want to build it yourself, uncomment this line and comment the above lines
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js" integrity="sha512-QYXU3Cojl94ZRiZRjUZpyg1odj9mKTON9MsTMzGNx/L3JqvMA3BQNraZwsZ83UeisO+QMVfFa83SyuYYJzR9hw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/math/math.min.js" integrity="sha512-Ff14h74LQq8X4XUGJ1yA4MYyVxtT1yu/Eo4cCpuPq1SN9DyW+kt6PXbgDz70PGZ95o87Sxkg6cTMO5bSxxJWsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/markdown.min.js" integrity="sha512-ZThqC5m3wE4dhbODPD56MNmka7pCxWa7C/cMFZRfFJnILgLxAYwFPeyoghsnS6qreNwQKHhKDt+qZaw648tf5g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  -->
+  <script src="static/js/main-w-audio.js"></script>
+  <script src="static/js/timer.js"></script>
+</body>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
 </html>
