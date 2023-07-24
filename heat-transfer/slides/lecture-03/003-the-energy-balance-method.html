@@ -1,31 +1,18 @@
 <section>
-  <h2>Boundary condition types</h2>
+  <h2>The energy balance method</h2>
 </section>
 
 <section>
   <div class="grid">
     <div class="col-6">
-      <h3>The four boundary condition types</h3>
+      <h3>Notation for the energy balance method</h3>
       <ul>
-        <li><p>We have to specify condtions on each boundary of the domain. These are called <b class="definition">boundary conditions</b>. Four types exist:</p></li>
-        <ul>
-          <li class="fragment" data-fragment-index="1">Constant temperature</li>
-          <ul>
-            <p class="fragment" data-fragment-index="1">$T_0 = c$</p>
-          </ul>
-          <li class="fragment" data-fragment-index="2">Constant heat flux</li>
-          <ul>
-            <li class="fragment" data-fragment-index="2">$\dot{Q}_\text{left,surface}=kA\frac{\text{d}T}{\text{d}x}=c$</li>
-          </ul>
-          <li class="fragment" data-fragment-index="3">Convection</li>
-          <ul>
-            <li class="fragment" data-fragment-index="3">$\dot{Q}_\text{left,surface}=hA\left(T_\infty-T_0 \right)=c$</li>
-          </ul>
-          <li class="fragment" data-fragment-index="4">Radiation</li>
-          <ul>
-            <li class="fragment" data-fragment-index="4">$\dot{Q}_\text{left,surface}=\epsilon \sigma A \left(T_\text{surr}^4-T_0^4\right)=c$</li>
-          </ul>
-        </ul>
+        <li><p>A <b class="definition">1D plane wall</b> is defined as being infinitely long (i.e. heat transfer only occurs in one direction)</p></li>
+        <li class="fragment" data-fragment-index="1">It extends from $x=0$ to $x=L$</li>
+        <li class="fragment" data-fragment-index="2">We discretise into $M$ nodes from $m=0$ to $m=M$</li>
+        <li class="fragment" data-fragment-index="3">Distance between nodes is $\Delta x$</li>
+        <li class="fragment" data-fragment-index="4">We form a volume element around each node with naturally also has width $\Delta x$</li>
+        <li class="fragment" data-fragment-index="5">We perform an energy balance on each volume element (not each node!)</li>
       </ul>
     </div>
     <div class="col-6">
