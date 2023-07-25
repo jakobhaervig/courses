@@ -7,37 +7,30 @@
     <div class="col-6">
       <h3>The four boundary condition types</h3>
       <ul>
-        <li><p>We have to specify condtions on each boundary of the domain. These are called <b class="definition">boundary conditions</b>. Four types exist:</p></li>
+        <li><p>We have to specify <b class="definition">boundary conditions</b> on each non-internal node. Four types exist:</p></li>
         <ul>
-          <li class="fragment" data-fragment-index="1">Constant temperature</li>
+          <li class="fragment" data-fragment-index="1">1. Constant temperature</li>
           <ul>
             <p class="fragment" data-fragment-index="1">$T_0 = c$</p>
           </ul>
-          <li class="fragment" data-fragment-index="2">Constant heat flux</li>
+          <li class="fragment" data-fragment-index="2">2. Constant heat flux</li>
           <ul>
-            <li class="fragment" data-fragment-index="2">$\dot{Q}_\text{left,surface}=kA\frac{\text{d}T}{\text{d}x}=c$</li>
+            <p class="fragment" data-fragment-index="2">$\dot{Q}_\text{left,surface}=kA\frac{\text{d}T}{\text{d}x}=c$</p>
           </ul>
-          <li class="fragment" data-fragment-index="3">Convection</li>
+          <li class="fragment" data-fragment-index="3">3. Convection</li>
           <ul>
-            <li class="fragment" data-fragment-index="3">$\dot{Q}_\text{left,surface}=hA\left(T_\infty-T_0 \right)=c$</li>
+            <p class="fragment" data-fragment-index="3">$\dot{Q}_\text{left,surface}=hA\left(T_\infty-T_0 \right)=c$</p>
           </ul>
-          <li class="fragment" data-fragment-index="4">Radiation</li>
+          <li class="fragment" data-fragment-index="4">4. Radiation</li>
           <ul>
-            <li class="fragment" data-fragment-index="4">$\dot{Q}_\text{left,surface}=\epsilon \sigma A \left(T_\text{surr}^4-T_0^4\right)=c$</li>
+            <p class="fragment" data-fragment-index="4">$\dot{Q}_\text{left,surface}=\epsilon \sigma A \left(T_\text{surr}^4-T_0^4\right)=c$</p>
           </ul>
         </ul>
       </ul>
     </div>
-    <div class="col-6">
+    <div class="col-6 align-right">
       <div class="r-stack">
-        <img src="media/imgs/lecture-03/energy-balance-notation_0.svg" height="1000">
-        <img class="fragment" data-fragment-index="4" src="media/imgs/lecture-03/energy-balance-notation_5.svg" height="1000">
-        <img class="fragment" data-fragment-index="4" src="media/imgs/lecture-03/energy-balance-notation_6.svg" height="1000">
-        <img class="fragment" data-fragment-index="5" src="media/imgs/lecture-03/energy-balance-notation_7.svg" height="1000">
-        <img class="fragment" data-fragment-index="1" src="media/imgs/lecture-03/energy-balance-notation_1.svg" height="1000">
-        <img class="fragment" data-fragment-index="2" src="media/imgs/lecture-03/energy-balance-notation_2.svg" height="1000">
-        <img class="fragment" data-fragment-index="2" src="media/imgs/lecture-03/energy-balance-notation_3.svg" height="1000">
-        <img class="fragment" data-fragment-index="3" src="media/imgs/lecture-03/energy-balance-notation_4.svg" height="1000">
+        <img src="media/imgs/lecture-03/boundary-node.svg" height="1000">
       </div>
     </div>
   </div>
@@ -46,26 +39,49 @@
 <section>
   <div class="grid">
     <div class="col-6">
-      <h3>Setting up the energy balance</h3>
+      <h3>Incorporating the different boundary conditions</h3>
       <ul>
-        <li><p>A <b class="definition">1D plane wall</b> is defined as being infinitely long (i.e. heat transfer only occurs in $x$-direction)</p></li>
-        <li class="fragment" data-fragment-index="1">It extends from $x=0$ to $x=L$</li>
-        <li class="fragment" data-fragment-index="2">We discretise into $M$ nodes from $m=0$ to $m=M$</li>
-        <li class="fragment" data-fragment-index="3">Distance between nodes is $\Delta x$</li>
-        <li class="fragment" data-fragment-index="4">We form a volume element around each node with naturally also has width $\Delta x$</li>
-        <li class="fragment" data-fragment-index="5">We perform an energy balance on each volume element (not each node!)</li>
+        <li>For BC type 1 (constant temperature), we simply fix the temperature</li>
+        <li class="fragment" data-fragment-index="1">For BC type 2-4, we set up an energy balance on the volume element:
+        $$
+        \small
+        \begin{aligned} \small
+        \sum_\text{all sides} \dot{Q} + \dot{G}_\text{element} = 0,
+        \end{aligned}
+        $$
+        </li>
+        <ul>
+          <li class="fragment" data-fragment-index="2"> which, in the case of a 1D plane wall, expands to</li>
+            <p class="fragment" data-fragment-index="2">$$\small \dot{Q}_\text{left,surface} + kA \frac{T_1-T_0}{\Delta x}+\dot{g}_0\left(\frac{\Delta x}{2}A\right)=0.$$</p>
+        </ul>
+      </ul>
+      <ul>
+        <li class="fragment" data-fragment-index="3">Expression for $\dot{Q}_\text{left,surface}$ depends on BC type</li>
       </ul>
     </div>
     <div class="col-6">
       <div class="r-stack">
-        <img src="media/imgs/lecture-03/energy-balance-notation_0.svg" height="1000">
-        <img class="fragment" data-fragment-index="4" src="media/imgs/lecture-03/energy-balance-notation_5.svg" height="1000">
-        <img class="fragment" data-fragment-index="4" src="media/imgs/lecture-03/energy-balance-notation_6.svg" height="1000">
-        <img class="fragment" data-fragment-index="5" src="media/imgs/lecture-03/energy-balance-notation_7.svg" height="1000">
-        <img class="fragment" data-fragment-index="1" src="media/imgs/lecture-03/energy-balance-notation_1.svg" height="1000">
-        <img class="fragment" data-fragment-index="2" src="media/imgs/lecture-03/energy-balance-notation_2.svg" height="1000">
-        <img class="fragment" data-fragment-index="2" src="media/imgs/lecture-03/energy-balance-notation_3.svg" height="1000">
-        <img class="fragment" data-fragment-index="3" src="media/imgs/lecture-03/energy-balance-notation_4.svg" height="1000">
+        <img src="media/imgs/lecture-03/boundary-node.svg" height="1000">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="grid">
+    <div class="col-6">
+      <h3>Incorporating constant heat flux BC</h3>
+      <ul>
+        <li>A constant heat flux given by $\dot{q}$:</li>
+        <p>$$\small \dot{Q}_\text{left,surface} = \dot{q}_0 A$$</p>
+      </ul>
+      <ul>
+        <li class="fragment" data-fragment-index="2">Energy balance of node 0 then becomes:</li>
+      </ul>
+    </div>
+    <div class="col-6">
+      <div class="r-stack">
+        <img src="media/imgs/lecture-03/boundary-node.svg" height="1000">
       </div>
     </div>
   </div>

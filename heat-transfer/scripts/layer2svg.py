@@ -10,7 +10,7 @@ import copy
 import click
 
 TEMPLATE = """
-<div class="r-stack">
+<div class="r-stack align-right">
 {img_html}
 </div>
 """
