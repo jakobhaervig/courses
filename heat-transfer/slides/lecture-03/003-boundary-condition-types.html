@@ -3,9 +3,9 @@
 </section>
 
 <section>
+  <h3>The four boundary condition types</h3>
   <div class="grid">
     <div class="col-6">
-      <h3>The four boundary condition types</h3>
       <ul>
         <li><p>We have to specify <b class="definition">boundary conditions</b> on each non-internal node. Four types exist:</p></li>
         <ul>
@@ -37,9 +37,9 @@
 </section>
 
 <section>
+  <h3>Incorporating the different boundary conditions</h3>
   <div class="grid">
     <div class="col-6">
-      <h3>Incorporating the different boundary conditions</h3>
       <ul>
         <li>For BC type 1 (constant temperature), we simply fix the temperature</li>
         <li class="fragment" data-fragment-index="1">For BC type 2-4, we set up an energy balance on the volume element:
@@ -68,15 +68,89 @@
 </section>
 
 <section>
+  <h3>Incorporating constant heat flux BC</h3>
   <div class="grid">
     <div class="col-6">
-      <h3>Incorporating constant heat flux BC</h3>
       <ul>
         <li>A constant heat flux given by $\dot{q}$:</li>
         <p>$$\small \dot{Q}_\text{left,surface} = \dot{q}_0 A$$</p>
       </ul>
       <ul>
-        <li class="fragment" data-fragment-index="2">Energy balance of node 0 then becomes:</li>
+        <li class="fragment" data-fragment-index="2">Energy balance at node $m=0$ then becomes:</li>
+        <p class="fragment" data-fragment-index="2">$$\small \dot{q}_0 A + k A \frac{T_1-T_0}{\Delta x} + \dot{g}_0\left(\frac{\Delta x}{2}A\right) = 0$$</p>
+      </ul>
+      <ul>
+        <li class="fragment" data-fragment-index="3"><b class="highlight">Special case</b> of insulated boundary (zero heat flux):</li>
+        <p class="fragment" data-fragment-index="3">$$\small 0 + k A \frac{T_1-T_0}{\Delta x} + \dot{g}_0\left(\frac{\Delta x}{2}A\right) = 0$$</p>
+      </ul>
+    </div>
+    <div class="col-6">
+      <div class="r-stack">
+        <img src="media/imgs/lecture-03/boundary-node.svg" height="1000">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Incorporating convection BC</h3>
+  <div class="grid">
+    <div class="col-6">
+      <ul>
+        <li>Convection with heat transfer coefficient $h$:</li>
+        <p>$$\small \dot{Q}_\text{left,surface} = h A \left(T_\infty-T_0\right)$$</p>
+      </ul>
+      <ul>
+        <li class="fragment" data-fragment-index="2">Energy balance at node $m=0$ then becomes:</li>
+        <p class="fragment" data-fragment-index="2">$$\small h A \left(T_\infty-T_0\right) + k A \frac{T_1-T_0}{\Delta x} + \dot{g}_0\left(\frac{\Delta x}{2}A\right) = 0$$</p>
+      </ul>
+    </div>
+    <div class="col-6">
+      <div class="r-stack">
+        <img src="media/imgs/lecture-03/boundary-node.svg" height="1000">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Incorporating radiation BC</h3>
+  <div class="grid">
+    <div class="col-6">
+      <ul>
+        <li>Radiation with emissivity $\epsilon$ and Stefan-Boltzmann constant $\sigma$:</li>
+        <p>$$\small \dot{Q}_\text{left,surface} = \epsilon \sigma A \left(T_\text{surr}^4-T_0^4\right)$$</p>
+      </ul>
+      <ul>
+        <li class="fragment" data-fragment-index="2">Energy balance at node $m=0$ then becomes:</li>
+        <p class="fragment" data-fragment-index="2">$$\small \epsilon \sigma A \left(T_\text{surr}^4-T_0^4\right) + k A \frac{T_1-T_0}{\Delta x} + \dot{g}_0\left(\frac{\Delta x}{2}A\right) = 0$$</p>
+      </ul>
+      <ul>
+        <li class="fragment" data-fragment-index="3"><b class="mycolor1">Note that:</b> For radiation the term $\small T_0^4$ makes the equation set non-linear. Different solution method is therefore typically needed.</li>
+      </ul>
+    </div>
+    <div class="col-6">
+      <div class="r-stack">
+        <img src="media/imgs/lecture-03/boundary-node.svg" height="1000">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Incorporating mixed boundary condition types</h3>
+  <div class="grid">
+    <div class="col-6">
+      <ul>
+        <li>All previous BC types can easily be combined :</li>
+        <p>$$\small \dot{Q}_\text{left,surface} = \epsilon \sigma A \left(T_\text{surr}^4-T_0^4\right)$$</p>
+      </ul>
+      <ul>
+        <li class="fragment" data-fragment-index="2">Energy balance at node $m=0$ then becomes:</li>
+        <p class="fragment" data-fragment-index="2">$$\small \epsilon \sigma A \left(T_\text{surr}^4-T_0^4\right) + k A \frac{T_1-T_0}{\Delta x} + \dot{g}_0\left(\frac{\Delta x}{2}A\right) = 0$$</p>
+      </ul>
+      <ul>
+        <li class="fragment" data-fragment-index="3"><b class="mycolor1">Note that:</b> For radiation the term $\small T_0^4$ makes the equation set non-linear. Different solution is therefore typically needed.</li>
       </ul>
     </div>
     <div class="col-6">
