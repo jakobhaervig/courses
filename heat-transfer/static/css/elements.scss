@@ -82,6 +82,10 @@ em {
     margin-top: 0;
 }
 
+.singleline {
+    display: flex;
+  }
+
 .clearfix:after {
     content: "";
     display: table;
@@ -89,11 +93,11 @@ em {
 }
 
 .definition {
-    color: rgb(171, 193, 120);
+    color: rgb(181, 32, 37);
 }
 
 .mycolor1 {
-    color: rgb(246, 232, 215);
+    color: rgb(82, 79, 161);
 }
 
 .mycolor2 {
