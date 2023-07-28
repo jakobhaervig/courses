@@ -1,61 +1,54 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="description" content="Heat Transfer; Aalborg University (AAU)">
+    <meta name="keywords" content="Interactive Lecture, Heat Transfer">
+    <meta name="author" content="Jakob Hærvig">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/reveal.css">
+    <link rel="stylesheet" href="static/css/haervig.css">
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title></title>
-  <meta name="description" content="Heat Transfer; Aalborg University (AAU)">
-  <meta name="keywords" content="Interactive Lecture, Heat Transfer">
-  <meta name="author" content="Jakob Hærvig">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.min.css" integrity="sha512-V5fKCVKOFy36w8zJmLzPH5R6zU6KvuHOvxfMRczx2ZeqTjKRGSBO9yiZjCKEJS3n6EmENwrH/xvSwXqxje+VVA==" crossorigin="anonymous" referrerpolicy="no-referrer"/-->
-  <link rel="stylesheet" href="static/css/reveal.css">
-  <link rel="stylesheet" href="static/css/rub.css">
-</head>
-
-<body>
-  <!--Footer-->
-  <div id="footer" class="footer">
-    <span class="element"> Course in Heat transfer | Aalborg University (AAU) | haervig.com | Jakob Hærvig, <script>document.write( new Date().getFullYear() )</script></span>
-  </div>
-
-  <!--slides-->
-  <div class="reveal">
-    <div class="slides">
-      <section data-markdown="slides/about.html">
-      </section>
-      <section>
-        <h1>Course in Heat Transfer</h1>
-        <h4>Lecture 3 | <script>document.write( new Date().getFullYear() );</script> <div id="slidesID"></div></h4>
-      </section>
-      <section data-markdown="slides/lecture-03/002-why-numerical-methods.html">
-      </section>
-      <section data-markdown="slides/lecture-03/003-the-energy-balance-method.html">
-      </section>
-      <section data-markdown="slides/lecture-03/003-boundary-condition-types.html">
-      </section>
-      <section data-markdown="slides/lecture-03/100-roots-and-weights.html">
-      </section>
-      <section data-markdown="slides/lecture-03/101-roots-and-weights-for-su3.html">
-      </section>
-      <!-- <section data-markdown="slides/lecture-03/004-positive-and-simple.html">
-      </section> -->
+  <body>
+    <!--Footer-->
+    <div id="footer" class="footer">
+      <span class="element"> Course in Heat transfer | Aalborg University (AAU) | haervig.com | Jakob Hærvig, <script>document.write( new Date().getFullYear() )</script></span>
     </div>
-  </div>
 
-  <!--JS setup-->
-  <script src="static/js/reveal.js"></script>
-  <script src="static/js/math/math.js"></script>
-  <script src="static/js/markdown.js"></script>
-  <script src="static/js/search.js"></script>
-  <script src="static/js/audio-slideshow.js"></script>
-  <!--CDN: if you don't want to build it yourself, uncomment this line and comment the above lines
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/js/reveal.min.js" integrity="sha512-QYXU3Cojl94ZRiZRjUZpyg1odj9mKTON9MsTMzGNx/L3JqvMA3BQNraZwsZ83UeisO+QMVfFa83SyuYYJzR9hw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/math/math.min.js" integrity="sha512-Ff14h74LQq8X4XUGJ1yA4MYyVxtT1yu/Eo4cCpuPq1SN9DyW+kt6PXbgDz70PGZ95o87Sxkg6cTMO5bSxxJWsQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/plugin/markdown/markdown.min.js" integrity="sha512-ZThqC5m3wE4dhbODPD56MNmka7pCxWa7C/cMFZRfFJnILgLxAYwFPeyoghsnS6qreNwQKHhKDt+qZaw648tf5g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  -->
-  <script src="static/js/main-w-audio.js"></script>
-  <script src="static/js/timer.js"></script>
-</body>
+    <!--slides-->
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="slides/about.html">
+        </section>
+        <section>
+          <h1>Course in Heat Transfer</h1>
+          <h4>Lecture 3 | <script>document.write( new Date().getFullYear() );</script> <div id="slidesID"></div></h4>
+        </section>
+        <section data-markdown="slides/lecture-03/002-why-numerical-methods.html">
+        </section>
+        <section data-markdown="slides/lecture-03/003-the-energy-balance-method.html">
+        </section>
+        <section data-markdown="slides/lecture-03/003-boundary-condition-types.html">
+        </section>
+        <!-- <section data-markdown="slides/lecture-03/100-roots-and-weights.html">
+        </section>
+        <section data-markdown="slides/lecture-03/101-roots-and-weights-for-su3.html">
+        </section> -->
+        <!-- <section data-markdown="slides/lecture-03/004-positive-and-simple.html">
+        </section> -->
+      </div>
+    </div>
 
+    <!--JS setup-->
+    <script src="static/js/reveal.js"></script>
+    <script src="static/js/math/math.js"></script>
+    <script src="static/js/markdown.js"></script>
+    <script src="static/js/search.js"></script>
+    <script src="static/js/audio-slideshow.js"></script>
+    <script src="static/js/main-w-audio.js"></script>
+    <script src="static/js/timer.js"></script>
+
+  </body>
 </html>

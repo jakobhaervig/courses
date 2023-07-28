@@ -1,3 +1,11 @@
+# Note to self:
+
+### Generate .css file
+
+``npx sass static/css/haervig.scss static/css/haervig.css``
+
+
+
 # Group Theory in Nuclear and Particle Physics Example Lecture
 
 This repository contains slides which were presented in the weekly *"Group Theory in Nuclear and Particle Physics"* lecture (the 10th lecture) at Ruhr-University Bochum during the winter semester of 21/22.

@@ -13,7 +13,7 @@ Reveal.initialize({
     plugins: [
         RevealMarkdown,
         RevealMath.KaTeX,
-        RevealAudioSlideshow, // command this line if you want to exclude the audio slideshow
+        RevealAudioSlideshow,
         RevealSearch
     ],
     katex: {
