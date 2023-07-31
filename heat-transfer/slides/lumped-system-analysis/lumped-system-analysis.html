@@ -1,0 +1,120 @@
+<section>
+<h2>Lumped System Analysis</h2>
+<h3>Topic 1</h3>
+</section>
+
+<section>
+  <h3>What is the lumped system assumption and why?</h3>
+  <div class="grid">
+    <div class="col-6">
+      <ul>
+        <li>Most heat transfer problems are complex because temperature vary in both with time and space</li>
+        <ul>
+          <li>In <b class='definition'>lumped systems</b>, temperature <b class='definition'>only varies with time and not space</b></li>
+        </ul>
+        <div class="fragment" data-fragment-index="2">
+        $$T=f(x,y,z,t) \longrightarrow T=f(t)$$
+      </div>
+      </ul>
+      <ul>
+        <li class="fragment" data-fragment-index="4">Applying the lumped system assumption <b class='definition'>significantly simplifies</b> the analysis</li>
+      </ul>
+    </div>
+    <div class="col-6">
+      <div class="fragment" data-fragment-index="3">
+        <img src="media/imgs/lumped-system-analysis/lumped-roast-beef.png" height="300">
+      </div>
+      <div class="fragment" data-fragment-index="3">
+        A roast beef (not lumped system)
+      </div>
+      <div class="fragment" data-fragment-index="3">
+        <img src="media/imgs/lumped-system-analysis/lumped-copper-ball.png" height="300">
+        <div class="fragment" data-fragment-index="3">
+          A copper ball (lumped system)
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Starting point of lumped system analysis</h3>
+  <div class="grid">
+    <div class="col-6">
+      <ul>
+        <li>Consider a body of arbitrary shape with:</li>
+        <ul>
+          <li>Mass $m$</li>
+          <li>Volume $V$</li>
+          <li>Density $\rho$</li>
+          <li>Surface area $A_s$</li>
+          <li>Specific heat capacity $c_p$</li>
+          <li>Initial internal temperature $T_i$</li>
+        </ul>
+        <li class="fragment" data-fragment-index="2">
+        At time $t=0$ the body is exposed to convective heat transfer from the surroundings with temperature $T_\infty$ and heat transfer coefficient $h$ 
+        </li>
+        <li class="fragment" data-fragment-index="4">Now, let's consider what happens during a small time interval $\text{d}t$</li>
+      </ul>
+    </div>
+    <div class="col-6">
+      <div class="fragment" data-fragment-index="3">
+        <img src="media/imgs/lumped-system-analysis/arbitrary-body.png" height="400">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Derivation of the lumped system equation</h3>
+  <div class="grid">
+    <div class="col-6">
+      <ul>
+        <li>Energy transferred to body during $\text{d}t$:</li>
+        <div class="singleline">
+          <p>$$h A_s (T_\infty-T) \text{d}t = m c_p \text{d}T$$</p>
+          <p class="fragment" data-fragment-index="2">$$~=\rho V c_p \text{d}T$$</p>
+        </div>
+        <li class="fragment" data-fragment-index="3">Because $T_\infty$ is constant, we may expand $\text{d}T$:</li>
+        <div class="singleline">
+          <p class="fragment" data-fragment-index="3"> $$ - h A_s (T-T_\infty) = \rho V c_p \text{d}(T-T_\infty)$$</p>
+        </div>
+          <li class="fragment" data-fragment-index="4">
+        Now, intergrating from $t=0$ where $T=T_i$ to any time $t$ at which $T=T(t)$ we get:
+        </li>
+        <div class="singleline">
+          <p class="fragment" data-fragment-index="4">$$\text{ln}\frac{T(t)-T_\infty}{T_i-T_\infty} = -\frac{h A_s (T-T_\infty)}{\rho V c_p}t$$</p>
+        </div>
+        <li class="fragment" data-fragment-index="5">Taking exponential on both sides, we finally obtain the lumped system equation:</li>
+        <div class="singleline">
+          <p class="fragment" data-fragment-index="5">$$\frac{T(t)-T_\infty}{T_i-T_\infty} = \text{e}^{-\frac{h A_s}{\rho V c_p}t}$$</p>
+        </div>
+      </ul>
+    </div>
+    <div class="col-6">
+      <div class="fragment" data-fragment-index="3">
+        <img src="media/imgs/lumped-system-analysis/arbitrary-body.png" height="400">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>The time constant for lumped systems</h3>
+  <div class="grid">
+    <div class="col-6">
+      <ul>
+        <li>Simplifying expression using the <b class='definition'>time constant ($1/b$)</b>:</li>
+        <div class="singleline">
+          <p>$$\frac{T(t)-T_\infty}{T_i-T_\infty} = \text{e}^{-\frac{h A_s}{\rho V c_p}t}$$</p>
+          <p class="fragment" data-fragment-index="2">$$~=\text{e}^{-bt}$$</p>
+        </div>
+      </ul>
+    </div>
+    <div class="col-6">
+      <div>
+        <img src="media/imgs/lumped-system-analysis/arbitrary-body.png" height="400">
+      </div>
+    </div>
+  </div>  
+</section>
