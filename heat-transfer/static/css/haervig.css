@@ -452,7 +452,7 @@
 
 .footer span {
   display: table-cell;
-  padding: 2px;
+  padding: 0.5em;
   text-align: center;
   font-size: 0.5em;
 }

@@ -14,7 +14,8 @@ Reveal.initialize({
         RevealMarkdown,
         RevealMath.KaTeX,
         RevealAudioSlideshow,
-        RevealSearch
+        RevealSearch,
+        RevealHighlight
     ],
     katex: {
         version: 'latest',

@@ -1,6 +1,6 @@
 <section>
-<h2>Lumped System Analysis</h2>
-<h3>Topic 1</h3>
+  <h2>Lumped System Analysis</h2>
+  <h3>Topic 1</h3>
 </section>
 
 <section>
@@ -85,14 +85,14 @@
         <div class="singleline">
           <p class="fragment" data-fragment-index="4">$$\text{ln}\frac{T(t)-T_\infty}{T_i-T_\infty} = -\frac{h A_s (T-T_\infty)}{\rho V c_p}t$$</p>
         </div>
-        <li class="fragment" data-fragment-index="5">Taking exponential on both sides, we finally obtain the lumped system equation:</li>
+        <li class="fragment" data-fragment-index="5">Taking exponential on both sides, we finally obtain the <b class='definition'>lumped system equation</b>:</li>
         <div class="singleline">
           <p class="fragment" data-fragment-index="5">$$\frac{T(t)-T_\infty}{T_i-T_\infty} = \text{e}^{-\frac{h A_s}{\rho V c_p}t}$$</p>
         </div>
       </ul>
     </div>
     <div class="col-6">
-      <div class="fragment" data-fragment-index="3">
+      <div>
         <img src="media/imgs/lumped-system-analysis/arbitrary-body.png" height="400">
       </div>
     </div>
@@ -104,17 +104,60 @@
   <div class="grid">
     <div class="col-6">
       <ul>
-        <li>Simplifying expression using the <b class='definition'>time constant ($1/b$)</b>:</li>
+        <li>The time constant describes at which rate the system approaches the surrounding temperature $T_\infty$</li>
+        <li class="fragment" data-fragment-index="2">Introducing $b=hA_s/(\rho V c_p)$, we obtain:</li>
         <div class="singleline">
-          <p>$$\frac{T(t)-T_\infty}{T_i-T_\infty} = \text{e}^{-\frac{h A_s}{\rho V c_p}t}$$</p>
-          <p class="fragment" data-fragment-index="2">$$~=\text{e}^{-bt}$$</p>
+          <p class="fragment" data-fragment-index="2">$$\frac{T(t)-T_\infty}{T_i-T_\infty} = \text{e}^{-\frac{h A_s}{\rho V c_p}t} = \text{e}^{-bt}$$</p>
         </div>
+        <li class="fragment" data-fragment-index="3">The inverse of $b$, e.g. $1/b$ is called <b class='definition'>the time constant</b> and describes how quickly the sytem reaches the surrounding medium temperature</li>
+        <ul>
+          <li class="fragment" data-fragment-index="4"><b class='definition'>Large $b$ value</b>, system approaches surrounding temperature <b class='definition'>quickly</b></li>
+          <li class="fragment" data-fragment-index="4"><b class='definition'>Small $b$ value</b>, system approaches surrounding temperature <b class='definition'>slowly</b></li>
+        </ul>
       </ul>
     </div>
     <div class="col-6">
       <div>
-        <img src="media/imgs/lumped-system-analysis/arbitrary-body.png" height="400">
+        <img src="media/imgs/lumped-system-analysis/lumped-time-constants.svg" height="800">
       </div>
     </div>
   </div>  
+</section>
+
+<section>
+  <h3>Validity of lumped system assumption</h3>
+  <div class="grid">
+    <div class="col-8">
+      <ul>
+        <li>We define a <b class='definition'>Biot number:</b></li>
+        <div>
+          $$
+            \text{Bi}=h L_c/k
+          $$
+        </div>
+        <ul>
+          <li class="fragment" data-fragment-index="1">with the characteristic length $L_c=V/A_s$</li>
+        </ul>
+      </ul>
+      <ul>
+        <li class="fragment" data-fragment-index="2">If $\text{Bi}=0$, then lumped system assumption is <b class='definition'>exact</b></li>
+        <li class="fragment" data-fragment-index="2">If $\text{Bi}\leq 0.1$, then lumped system assumption is <b class='definition'>resonable accurate</b></li>
+        <li class="fragment" data-fragment-index="2">If $\text{Bi}> 0.1$, then lumped system assumption is <b class='definition'>inaccurate</b></li>
+      </ul>
+    </div>
+    <div class="col-4">
+      <img src="media/imgs/lumped-system-analysis/lumped-biot-convection-conduction-ratio.png" height="600">
+    </div>
+  </div>  
+</section>
+
+<section>
+  <h3>test</h3>
+<pre class="python"><code data-line-numbers="1-2|3-4">if x<2:
+  print(x)
+elif x>2:
+  print(y)
+def fcn(x):
+  print(x)
+</code></pre>
 </section>
