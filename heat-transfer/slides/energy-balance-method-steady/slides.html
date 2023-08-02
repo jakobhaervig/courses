@@ -1,9 +1,14 @@
 <section>
   <h2>The energy balance method for steady heat transfer problems</h2>
+  <h3>Topic 2</h3>
 </section>
 
 <section>
-  <h3>Notation for the energy balance method</h3>
+  <h2>One-dimenensional problems</h2>
+</section>
+
+<section>
+  <h3>Notation for one-dimension problems</h3>
   <div class="grid">
     <div class="col-6">
       <ul>
@@ -14,7 +19,7 @@
         <li class="fragment" data-fragment-index="4">We form a volume element around each node which naturally also has width $\Delta x$</li>
       </ul>
     </div>
-    <div class="col-6">
+   <div class="col-6">
       <div class="r-stack">
         <img src="media/imgs/energy-balance-method-steady/energy-balance-notation_0.svg" height="1000">
         <img class="fragment" data-fragment-index="4" src="media/imgs/energy-balance-method-steady/energy-balance-notation_5.svg" height="1000">
@@ -310,4 +315,81 @@
       </div>
     </div>
   </div>
+</section>
+
+<section>
+  <h2>Two- and Three-dimenensional problems</h2>
+</section>
+
+<section>
+  <h3>Notation for two-dimension problems</h3>
+  <div class="grid">
+    <div class="col-6">
+      <ul>
+        <li class="fragment" data-fragment-index="1">We use double subscripts ($m$,$n$) to denote two dimensions (triple for three dimensions)</li>
+        <ul class="fragment" data-fragment-index="1">
+          <li>$m$ used for $x$-direction</li>
+          <li>$n$ used for $y$-direction</li>
+        </ul>
+        <li class="fragment" data-fragment-index="2">Temperature at node ($m=5$,$n=4$) is written $T_{5,4}$</li>
+        <li class="fragment" data-fragment-index="3">Distances between nodes are $\Delta x$ and $\Delta y$ in $x$- and $y$-directions respectively</li>
+        <li class="fragment" data-fragment-index="4">We form volume elements around each node</li>
+        <li class="fragment" data-fragment-index="5">We convert from node number to actual coordinates by:</li>
+        <ul class="fragment" data-fragment-index="5">
+          <li>$x=m\Delta x$</li>
+          <li>$y=n\Delta y$</li>
+        </ul>
+      </ul>
+    </div>
+   <div class="col-6">
+      <div class="r-stack">
+        <img src="media/imgs/energy-balance-method-steady/energy-balance-notation-2d-0.svg" height="1000">
+        <img src="media/imgs/energy-balance-method-steady/energy-balance-notation-2d-1.svg" height="1000">
+        <img src="media/imgs/energy-balance-method-steady/energy-balance-notation-2d-2.svg" height="1000">
+        <img class="fragment" data-fragment-index="1" src="media/imgs/energy-balance-method-steady/energy-balance-notation-2d-3.svg" height="1000">
+        <img class="fragment" data-fragment-index="3" src="media/imgs/energy-balance-method-steady/energy-balance-notation-2d-4.svg" height="1000">
+        <img class="fragment" data-fragment-index="4" src="media/imgs/energy-balance-method-steady/energy-balance-notation-2d-5.svg" height="1000">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>The energy balance equation</h3>
+  <ul>
+    <li>We sum up heat transfer to/from volume element:</li>
+  </ul>
+  <ul>
+    <p>
+      $$
+      \small
+      \left(
+      \begin{array}{ccc}
+      \text{Sum of heat}\\
+      \text{transfer rate}\\
+      \text{across surfaces}\\
+      \text{of volume element}
+      \end{array}
+      \right)
+      +
+      \left( 
+      \begin{array}{ccc}
+      \text{Rate of heat}\\
+      \text{generation}\\
+      \text{inside the}\\
+      \text{element}
+      \end{array}
+      \right)
+      =
+      \left( 
+      \begin{array}{ccc}
+      \text{Rate of change}\\
+      \text{of the energy}\\
+      \text{content of}\\
+      \text{the element}
+      \end{array}
+      \right)
+      $$
+    </p>
+  </ul>
 </section>
