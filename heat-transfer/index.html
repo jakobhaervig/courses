@@ -15,7 +15,7 @@
   <body>
     <!--Footer-->
     <div id="footer" class="footer">
-      <span class="element">Interactive slides for Heat transfer | Jakob Hærvig | Aalborg University (AAU) | haervig.com | <script>document.write( new Date().getFullYear() )</script></span>
+      <span class="element">Interactive slides for Heat transfer <script>document.write( new Date().getFullYear() )</script> | Jakob Hærvig | Aalborg University (AAU)</span>
     </div>
 
     <!--slides-->
@@ -38,7 +38,11 @@
         </section>
 
         <!--Energy balance method transient-->
-        <!-- <section data-markdown="slides/energy-balance-method-transient/slides.html">
+        <!-- <section data-markdown="slidess/energy-balance-method-transient/slides.html">
+        </section> -->
+
+        <!--Analytical solutions for heat transfer-->
+        <!-- <section data-markdown="slides/analytical-solutions-for-heat-transfer/slides.html">
         </section> -->
 
       </div>
@@ -52,6 +56,66 @@
     <script src="static/js/audio-slideshow.js"></script>
     <script src="static/js/timer.js"></script>
     <script src="static/js/highlight/highlight.js"></script>
-    <script src="static/js/main-w-audio.js"></script>
+    <script>
+      Reveal.initialize({
+      width: 1782, // 1460
+      height: 1260, // 1050
+      margin: 0.04,
+      minScale: 0.2,
+      maxScale: 2.0,
+      center: true,
+      slideNumber: true,
+      history: true,
+      pdfSeparateFragments: false,
+      fragments: true,
+      fragmentInURL: true,
+      plugins: [
+          RevealMarkdown,
+          RevealMath.KaTeX,
+          RevealAudioSlideshow,
+          RevealSearch,
+          RevealHighlight
+      ],
+      katex: {
+          version: 'latest',
+          delimiters: [{
+                  left: '$$',
+                  right: '$$',
+                  display: true
+              },
+              {
+                  left: '$',
+                  right: '$',
+                  display: false
+              },
+              {
+                  left: '\\(',
+                  right: '\\)',
+                  display: false
+              },
+              {
+                  left: '\\[',
+                  right: '\\]',
+                  display: true
+              }
+          ],
+          ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      audio: {
+          autoplay: false,
+          playerStyle: 'position: fixed; bottom: 0.7em; left: 25%; width: 50%; height:2em; z-index: 33;',
+          defaultAudios: true,
+          prefix: 'media/audio/main/',
+          suffix: ".mp3",
+          defaultDuration: 600
+      }
+      })
+
+      window.addEventListener("load", function() {
+          revealDiv = document.querySelector("body div.reveal")
+          footer = document.getElementById("footer");
+          revealDiv.appendChild(footer);
+      });
+    </script>
   </body>
 </html>
