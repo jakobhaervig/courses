@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="description" content="Python; Aalborg University (AAU)">
+    <meta name="keywords" content="Interactive Course, Python">
+    <meta name="author" content="Jakob Hærvig">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/reveal.css">
+    <link rel="stylesheet" href="static/css/haervig.css">
+    <link rel="stylesheet" href="static/css/haervig_highlight.css">
+  </head>
+
+  <body>
+    <!--Footer-->
+    <div id="footer" class="footer">
+      <span class="element">Getting Started with Python <script>document.write( new Date().getFullYear() )</script> | Jakob Hærvig | Aalborg University (AAU)</span>
+    </div>
+
+    <!--slides-->
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown="slides/about.html">
+        </section>
+        <section>
+          <h1>Getting Started with Python</h1>
+          <h1><script>document.write( new Date().getFullYear() );</script> <div id="slidesID"></div></h1>
+        </section>
+
+        <!--Installating Python-->
+        <section data-markdown="slides/installing-python/slides.html">
+        </section>
+
+      </div>
+    </div>
+
+    <!--JS setup-->
+    <script src="static/js/reveal.js"></script>
+    <script src="static/js/math/math.js"></script>
+    <script src="static/js/markdown.js"></script>
+    <script src="static/js/search.js"></script>
+    <script src="static/js/audio-slideshow.js"></script>
+    <script src="static/js/timer.js"></script>
+    <script src="static/js/highlight/highlight.js"></script>
+    <script>
+      Reveal.initialize({
+      width: 1782, // 1460
+      height: 1260, // 1050
+      margin: 0.04,
+      minScale: 0.2,
+      maxScale: 2.0,
+      center: true,
+      slideNumber: true,
+      history: true,
+      pdfSeparateFragments: false,
+      fragments: true,
+      fragmentInURL: true,
+      plugins: [
+          RevealMarkdown,
+          RevealMath.KaTeX,
+          RevealAudioSlideshow,
+          RevealSearch,
+          RevealHighlight
+      ],
+      katex: {
+          version: 'latest',
+          delimiters: [{
+                  left: '$$',
+                  right: '$$',
+                  display: true
+              },
+              {
+                  left: '$',
+                  right: '$',
+                  display: false
+              },
+              {
+                  left: '\\(',
+                  right: '\\)',
+                  display: false
+              },
+              {
+                  left: '\\[',
+                  right: '\\]',
+                  display: true
+              }
+          ],
+          ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      audio: {
+          autoplay: false,
+          playerStyle: 'position: fixed; bottom: 0.7em; left: 25%; width: 50%; height:2em; z-index: 33;',
+          defaultAudios: true,
+          prefix: 'media/audio/main/',
+          suffix: ".mp3",
+          defaultDuration: 600
+      }
+      })
+
+      window.addEventListener("load", function() {
+          revealDiv = document.querySelector("body div.reveal")
+          footer = document.getElementById("footer");
+          revealDiv.appendChild(footer);
+      });
+    </script>
+  </body>
+</html>
