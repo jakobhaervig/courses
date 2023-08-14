@@ -3,14 +3,14 @@
 @import "fonts";
 $mainFont: 'SourceSansPro', sans-serif;
 $mainFontSize: 36px;
-$mainColor: #003560;
+$mainColor: #d9d9d9;
 $headingFont: 'Tinos', Impact, serif;
 $headingFontWeight: 700;
-$headingColor: #003560;
+$headingColor: #ffffff;
 $headingTextShadow: none;
 $headingTextTransform: none;
-$backgroundColor: #fff;
-$linkColor: #00008B;
+$backgroundColor: #000000;
+$linkColor: #008b4c;
 $linkColorHover: lighten($linkColor, 20%);
 $selectionBackgroundColor: rgba(0, 0, 0, 0.99); // Change text colors against dark slide backgrounds
 @import "template/theme"; // Custom overrides

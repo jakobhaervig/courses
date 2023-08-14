@@ -1,6 +1,6 @@
 Reveal.initialize({
-    width: 1782, // 1460
-    height: 1260, // 1050
+    width: 1920, // 1460
+    height: 1080, // 1050
     margin: 0.04,
     minScale: 0.2,
     maxScale: 2.0,
