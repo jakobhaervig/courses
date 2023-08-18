@@ -10,26 +10,27 @@
       <ul>
         <li>Most heat transfer problems are complex because temperature vary in both with time and space</li>
         <ul>
-          <li>In <b class='definition'>lumped systems</b>, temperature <b class='definition'>only varies with time and not space</b></li>
+          <li class="fragment" data-fragment-index="1">In <b class='definition'>lumped systems</b>, temperature <b class='definition'>only varies with time and not space</b></li>
         </ul>
-        <div class="fragment" data-fragment-index="2">
-        $$T=f(x,y,z,t) \longrightarrow T=f(t)$$
+      <div class="singleline">
+        <p class="fragment" data-fragment-index="2">$$T=f(x,y,z,t)$$</p>
+        <p class="fragment" data-fragment-index="3">$$~\longrightarrow T=f(t)$$</p>
       </div>
       </ul>
       <ul>
-        <li class="fragment" data-fragment-index="4">Applying the lumped system assumption <b class='definition'>significantly simplifies</b> the analysis</li>
+        <li class="fragment" data-fragment-index="5">Applying the lumped system assumption <b class='definition'>significantly simplifies</b> the analysis</li>
       </ul>
     </div>
     <div class="col-6">
-      <div class="fragment" data-fragment-index="3">
+      <div class="fragment" data-fragment-index="4">
         <img src="media/imgs/lumped-system-analysis/lumped-roast-beef.png" height="300">
       </div>
-      <div class="fragment" data-fragment-index="3">
+      <div class="fragment" data-fragment-index="4">
         A roast beef (not lumped system)
       </div>
-      <div class="fragment" data-fragment-index="3">
+      <div class="fragment" data-fragment-index="4">
         <img src="media/imgs/lumped-system-analysis/lumped-copper-ball.png" height="300">
-        <div class="fragment" data-fragment-index="3">
+        <div class="fragment" data-fragment-index="4">
           A copper ball (lumped system)
         </div>
       </div>
@@ -52,14 +53,18 @@
           <li>Initial internal temperature $T_i$</li>
         </ul>
         <li class="fragment" data-fragment-index="2">
-        At time $t=0$ the body is exposed to convective heat transfer from the surroundings with temperature $T_\infty$ and heat transfer coefficient $h$ 
-        </li>
-        <li class="fragment" data-fragment-index="4">Now, let's consider what happens during a small time interval $\text{d}t$</li>
+        At time $t=0$ the body is exposed to convective heat transfer from the surroundings with temperature $T_\infty$ and heat transfer coefficient $h$
       </ul>
     </div>
-    <div class="col-6">
+    <!-- <div class="col-6">
       <div class="fragment" data-fragment-index="3">
         <img src="media/imgs/lumped-system-analysis/arbitrary-body.png" height="400">
+      </div>
+    </div> -->
+    <div class="col-6">
+      <div class="r-stack">
+        <img class="fragment" data-fragment-index="1" src="media/imgs/lumped-system-analysis/arbitrary-body-0.svg" height="800">
+        <img class="fragment" data-fragment-index="2" src="media/imgs/lumped-system-analysis/arbitrary-body-1.svg" height="800">
       </div>
     </div>
   </div>
@@ -93,7 +98,7 @@
     </div>
     <div class="col-6">
       <div>
-        <img src="media/imgs/lumped-system-analysis/arbitrary-body.png" height="400">
+        <img src="media/imgs/lumped-system-analysis/arbitrary-body.png" height="800">
       </div>
     </div>
   </div>
