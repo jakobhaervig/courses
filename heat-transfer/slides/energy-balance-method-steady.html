@@ -322,7 +322,7 @@
 </section>
 
 <section>
-  <h3>Notation for two-dimension problems</h3>
+  <h3>Notation for two-dimensional problems</h3>
   <div class="grid">
     <div class="col-6">
       <ul>
@@ -427,71 +427,21 @@
 
 <section>
   <h3>Handling irregular boundaries</h3>
-  <ul>
-    <li>We sum up heat transfer to/from volume element:</li>
-  </ul>
-  <ul>
-    <p>
-      $$
-      \small
-      \left(
-      \begin{array}{ccc}
-      \text{Sum of heat}\\
-      \text{transfer rate}\\
-      \text{across surfaces}\\
-      \text{of volume element}
-      \end{array}
-      \right)
-      +
-      \left( 
-      \begin{array}{ccc}
-      \text{Rate of heat}\\
-      \text{generation}\\
-      \text{inside the}\\
-      \text{element}
-      \end{array}
-      \right)
-      =
-      \left( 
-      \begin{array}{ccc}
-      \text{Rate of change}\\
-      \text{of the energy}\\
-      \text{content of}\\
-      \text{the element}
-      \end{array}
-      \right)
-      $$
-    </p>
-  </ul>
-  <ul class="fragment" data-fragment-index="1">
-    <p>
-      $$
-      \small
-      \sum_\text{all surfaces} Q +
-      \dot{G}_\text{element}
-      =
-      \frac{\Delta E_\text{element}}{\Delta t}
-      $$
-    </p>
-  </ul>
+    <ul>
+      <li>Different approaches to irregular boundaries:</li>
+    </ul>
   <div class="grid">
-    <div class="col-6">
-      <div class="singleline">
-        <p class="mycolor2">$kA \frac{T_{m-1,n}-T_{m,n}}{\Delta x}$</p>
-        <p>$~+~$</p>
-        <p class="mycolor5">$kA\frac{T_{m+1,n}-T_{m,n}}{\Delta x}$</p>
-        <p>$~+~$</p>
-        <p class="mycolor6">$kA\frac{T_{m,n-1}-T_{m,n}}{\Delta y}$</p>
-        <p>$~+~$</p>
-        <p class="mycolor4">$kA\frac{T_{m,n+1}-T_{m,n}}{\Delta y}$</p>
-        <p>$~=~$</p>
-        <p>$0$</p>
-      </div>
+    <div class="col-4">
+      <img src="media/imgs/energy-balance-method-steady/irregular-boundary-0.svg" height="600">
+    Coarse representation by coarse structured grid
     </div>
-    <div class="col-6">
-      <div class="r-stack">
-        <img src="media/imgs/energy-balance-method-steady/energy-balance-internal-node-2d.svg" height="600">
-      </div>
+    <div class="col-4">
+      <img src="media/imgs/energy-balance-method-steady/irregular-boundary-1.svg" height="600">
+    Better representation by refined structured grid
+    </div>
+    <div class="col-4">
+      <img src="media/imgs/energy-balance-method-steady/irregular-boundary-2.svg" height="600">
+    Even better presentation by body-fitted grid
     </div>
   </div>
 </section>
