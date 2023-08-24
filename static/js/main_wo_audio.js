@@ -20,8 +20,8 @@ Reveal.initialize({
             color: 'var(--r-main-color)',
             oppositecolor: 'black',
             position: {
-                right: '20px',
-                top: '20px'
+                right: '10px',
+                top: '10px'
             }
         },
         debugfsdisabled: false
