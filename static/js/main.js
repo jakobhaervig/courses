@@ -5,17 +5,34 @@ Reveal.initialize({
     minScale: 0.2,
     maxScale: 2.0,
     center: true,
-    slideNumber: true,
+    slideNumber: slide => {return [ 'Topic '+Reveal.getIndices( slide ).h+','+Reveal.getIndices( slide ).v]},
     history: true,
     pdfSeparateFragments: false,
     fragments: true,
     fragmentInURL: true,
+    fsfx: {
+        baseclass: 'fsbutton',
+        hideifnofs: true,
+        nofsfxCss: 'display: none;',
+        compatibility: true,
+        auto: {
+            generate: true,
+            color: 'var(--r-main-color)',
+            oppositecolor: 'black',
+            position: {
+                right: '20px',
+                top: '20px'
+            }
+        },
+        debugfsdisabled: false
+    },
     plugins: [
         RevealMarkdown,
         RevealMath.KaTeX,
         RevealAudioSlideshow,
         RevealSearch,
-        RevealHighlight
+        RevealHighlight,
+        FsFx
     ],
     katex: {
         version: 'latest',

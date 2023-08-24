@@ -10,12 +10,29 @@ Reveal.initialize({
     pdfSeparateFragments: false,
     fragments: true,
     fragmentInURL: true,
+    fsfx: {
+        baseclass: 'fsbutton',
+        hideifnofs: true,
+        nofsfxCss: 'display: none;',
+        compatibility: true,
+        auto: {
+            generate: true,
+            color: 'var(--r-main-color)',
+            oppositecolor: 'black',
+            position: {
+                right: '20px',
+                top: '20px'
+            }
+        },
+        debugfsdisabled: false
+    },
     plugins: [
         RevealMarkdown,
         RevealMath.KaTeX,
         //RevealAudioSlideshow,
         RevealSearch,
-        RevealHighlight
+        RevealHighlight,
+        FsFx
     ],
     katex: {
         version: 'latest',
