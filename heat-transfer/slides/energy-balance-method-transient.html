@@ -44,7 +44,23 @@
   </ul>
   <ul class="fragment" data-fragment-index="2">
     <li>For <b class="definition">unsteady heat transfer</b>, e.g. transient:</li>
+    <div class="singleline">
     <p>
+      $$
+      \small
+      \sum_\text{all surfaces} Q +
+      \dot{G}_\text{element}
+      =
+      \frac{\Delta E_\text{element}}{\Delta t}
+      \neq 0
+      $$
+    </p>
+  </div>
+  </ul>
+  <ul>
+    <li class="fragment" data-fragment-index="3">Change in energy content may be written as:</li>
+    <div class="singleline">
+    <p class="fragment" data-fragment-index="3">
       $$
       \small
       \sum_\text{all surfaces} Q +
@@ -53,45 +69,22 @@
       \frac{\Delta E_\text{element}}{\Delta t}
       $$
     </p>
-  </ul>
-  <ul class="fragment" data-fragment-index="3">
-    <li>For <b class="definition">steady heat transfer</b>, e.g. no change in time:</li>
-    <p>
+    <p class="fragment" data-fragment-index="4">
       $$
-      \small
-      \sum_\text{all surfaces} Q +
-      \dot{G}_\text{element}
-      =
-      0
+      ~= \frac{m c_p \Delta T}{\Delta t}
       $$
     </p>
-  </ul>
-  <ul class="fragment" data-fragment-index="4">
-    <li>Change in energy content may be written as:</li>
-    <p>
+    <p class="fragment" data-fragment-index="5">
       $$
-      \small
-      \sum_\text{all surfaces} Q +
-      \dot{G}_\text{element}
-      =
-      \frac{\Delta E_\text{element}}{\Delta t}
-      = \frac{m c_p \Delta T}{\Delta t} = \frac{\rho V c_p \Delta T}{\Delta t}
+      ~= \frac{\rho V c_p \Delta T}{\Delta t}
       $$
     </p>
-  </ul>
-  <ul class="fragment" data-fragment-index="5">
-    <li>.. In terms of node $m$ and timestep $i$:</li>
-    <p>
+    <p class="fragment" data-fragment-index="6">
       $$
-      \small
-      \sum_\text{all surfaces} Q +
-      \dot{G}_\text{element}
-      =
-      \frac{\Delta E_\text{element}}{\Delta t}
-      = \frac{m c_p \Delta T}{\Delta t} = \frac{\rho V c_p \Delta T}{\Delta t} 
-      = \frac{\rho V c_p (T_m^{i+1}-T_m^i)}{\Delta t}
+      ~= \frac{\rho V c_p (T_m^{i+1}-T_m^i)}{\Delta t}
       $$
     </p>
+  </div>
   </ul>
 </section>
 
@@ -109,7 +102,7 @@
     </p>
   </ul>
   <ul>
-    <li><b class="mycolor1">Explicit</b> method:</li>
+    <li class="fragment" data-fragment-index="2"><b class="mycolor1">Explicit</b> method:</li>
     <div class="singleline fragment" data-fragment-index="2">
       <p class="mycolor1">
       $$
@@ -127,8 +120,8 @@
 
   </ul>
   <ul>
-    <li><b class="mycolor0">Implicit</b> method:</li>
-    <div class="singleline fragment" data-fragment-index="2">
+    <li class="fragment" data-fragment-index="3"><b class="mycolor0">Implicit</b> method:</li>
+    <div class="singleline fragment" data-fragment-index="3">
       <p class="mycolor0">
       $$
       \small
