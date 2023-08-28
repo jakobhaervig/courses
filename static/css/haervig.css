@@ -82,14 +82,14 @@
  * GLOBAL STYLES
  *********************************************/
 :root {
-  --r-background-color: #000000;
+  --r-background-color: #ffffff;
   --r-main-font: SourceSansPro, sans-serif;
   --r-main-font-size: 36px;
-  --r-main-color: #d9d9d9;
+  --r-main-color: #141414;
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
   --r-heading-font: Tinos, Impact, serif;
-  --r-heading-color: #ffffff;
+  --r-heading-color: #141414;
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: normal;
   --r-heading-text-transform: none;
@@ -101,14 +101,14 @@
   --r-heading3-size: 1.55em;
   --r-heading4-size: 1em;
   --r-code-font: monospace;
-  --r-link-color: #008b4c;
-  --r-link-color-dark: #003f22;
-  --r-link-color-hover: #00f184;
+  --r-link-color: #383838;
+  --r-link-color-dark: #121212;
+  --r-link-color-hover: #6b6b6b;
   --r-selection-background-color: rgba(0, 0, 0, 0.99);
   --r-selection-color: #fff; }
 
 .reveal-viewport {
-  background: #000000;
+  background: #ffffff;
   background-color: var(--r-background-color); }
 
 .reveal {
@@ -376,14 +376,14 @@
   display: table;
   width: 100%;
   bottom: 0;
-  color: #d9d9d9;
-  font-size: 10px; }
+  color: #141414;
+  font-size: 15px; }
 
 .footer span {
   display: table-cell;
   padding: 10px;
   text-align: center;
-  font-size: 10px; }
+  font-size: 15px; }
 
 .footer span:nth-of-type(1) {
   text-align: left; }
