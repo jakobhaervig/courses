@@ -4,6 +4,38 @@
   <h3>Topic 3</h3>
 </section>
 
+<section>
+  <h3>Notation for transient problems</h3>
+  <div class="grid">
+    <div class="col-6">
+      <ul>
+        <li>Discretise in both space and time</li>
+        <ul>
+        <li class="fragment" data-fragment-index="1">$m,n,k$ denote node number $x,y,z$-directions (space)</li>
+        <li class="fragment" data-fragment-index="1">$i$ denote node number in $t$-direction (time)</li>
+          <p class="fragment" data-fragment-index="1">
+            $$
+            T_{m,n,k}^i
+            $$
+          </p>
+        </ul>
+        <li class="fragment" data-fragment-index="2">Distance between nodes in space is $\Delta x$</li>
+        <li class="fragment" data-fragment-index="2">Time between two time steps is $\Delta t$</li>
+        <ul>
+          <li class="fragment" data-fragment-index="3">Convert to actual time by $t=i\Delta t$</li>
+        </ul>
+      </ul>
+    </div>
+   <div class="col-6">
+      <div class="r-stack">
+        <img src="media/imgs/energy-balance-method-transient/energy-balance-notation-transient-0.svg" height="1000">
+        <img class="fragment" data-fragment-index="1" src="media/imgs/energy-balance-method-transient/energy-balance-notation-transient-1.svg" height="1000">
+        <img class="fragment" data-fragment-index="2" src="media/imgs/energy-balance-method-transient/energy-balance-notation-transient-2.svg" height="1000">
+      </div>
+    </div>
+  </div>
+</section>
+
 <section> 
   <h3>The energy balance equation</h3>
   <ul>
