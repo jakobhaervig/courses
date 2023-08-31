@@ -83,7 +83,12 @@ em {
     margin-top: 0;
 }
 
-.singleline {
+.singleline-left-aligned {
+    display: flex;
+    justify-content: left;
+  }
+
+  .singleline-center-aligned {
     display: flex;
     justify-content: center;
   }
