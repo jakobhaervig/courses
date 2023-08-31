@@ -442,9 +442,13 @@ em {
   margin-right: 0px;
   margin-top: 0; }
 
-.singleline {
+.singleline-left-aligned {
   display: flex;
-  text-align: center; }
+  justify-content: left; }
+
+.singleline-center-aligned {
+  display: flex;
+  justify-content: center; }
 
 .clearfix:after {
   content: "";

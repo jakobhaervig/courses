@@ -121,6 +121,57 @@
 </section>
 
 <section>
+  <h3>The energy balance equation for interior nodes</h3>
+  <ul>
+    <li>General equation for transient heat transfer</li>
+    <p class="singleline">
+      $$
+      \small
+      \sum_\text{all surfaces} Q +
+      \dot{G}_\text{element}
+      = \frac{\rho V c_p (T_m^{i+1}-T_m^i)}{\Delta t}
+      $$
+    </p>
+  </ul>
+  <ul>
+    <li class="fragment" data-fragment-index="2"><b class="mycolor1">Explicit</b> method:</li>
+    <div class="singleline fragment" data-fragment-index="2">
+      <p class="mycolor1">
+      $$
+      \small
+      \sum_\text{all surfaces} Q^i +
+      \dot{G}_\text{element}^i
+      $$
+      </p>
+      <p>
+      $$
+      ~= \frac{\rho V c_p (T_m^{i+1}-T_m^i)}{\Delta t}
+      $$
+    </p>
+    </div>
+
+  </ul>
+  <ul>
+    <li class="fragment" data-fragment-index="3"><b class="mycolor0">Implicit</b> method:</li>
+    <div class="singleline fragment" data-fragment-index="3">
+      <p class="mycolor0">
+      $$
+      \small
+      \sum_\text{all surfaces} Q^{i+1} +
+      \dot{G}_\text{element}^{i+1}
+      $$
+      </p>
+      <p>
+      $$
+      ~= \frac{\rho V c_p (T_m^{i+1}-T_m^i)}{\Delta t}
+      $$
+    </p>
+    </div>
+  </ul>
+</section>
+
+
+<section>
   <h3>Explicit and implicit solution methods</h3>
   <ul>
     <li>General equation for transient heat transfer</li>
@@ -167,6 +218,6 @@
       $$
     </p>
     </div>
-
   </ul>
 </section>
+
