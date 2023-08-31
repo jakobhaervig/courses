@@ -273,7 +273,7 @@
     <div class="col-6">
       <ul>
         <li>All BC types (<b class="mycolor1">heat flux</b>, <b class="mycolor4">convection</b> and <b class="mycolor5">radiation</b>) can easily be added to form mixed types:</li>
-        <div class="singleline">
+        <div class="singleline-ca">
           <p>$$\small \dot{Q}_\text{left,surface}=$$</p>
           <p class="mycolor1">$$\small~\dot{q}_0 A$$</p>
           <p>$$~+$$</p>
@@ -356,7 +356,7 @@
 </section>
 
 <section>
-  <h3>The energy balance equation</h3>
+  <h3>The energy balance equation for internal nodes</h3>
   <ul>
     <li>Sum up heat transfer to/from volume element:</li>
   </ul>
@@ -406,22 +406,23 @@
   </ul>
   <div class="grid">
     <div class="col-6">
-      <div class="singleline-center-aligned fragment" data-fragment-index="2">
-        <p class="mycolor2">$\dot{Q}_\text{left,cond}$</p>
-        <p>$~+~$</p>
-        <p class="mycolor5">$\dot{Q}_\text{right,cond}$</p>
-        <p>$~+~$</p>
-        <p class="mycolor6">$\dot{Q}_\text{bottom,cond}$</p>
-        <p>$~+~$</p>
-        <p class="mycolor4">$\dot{Q}_\text{top,cond}$</p>
-        <p>$~+~$</p>
-        <p>$\dot{G}_\text{element}$</p>
-        <p>$~=~$</p>
-        <p>$0$</p>
-      </div>
       <ul>
-        <li>Sum up heat transfer to/from volume element:</li>
-        <div class="singleline-left-aligned fragment" data-fragment-index="2">
+        <li class="fragment" data-fragment-index="2">Sum up heat transfer to/from volume element:</li>
+        <div class="singleline-la pad-top fragment" data-fragment-index="2">
+          <p class="mycolor2">$\dot{Q}_\text{left,cond}$</p>
+          <p>$~+~$</p>
+          <p class="mycolor5">$\dot{Q}_\text{right,cond}$</p>
+          <p>$~+~$</p>
+          <p class="mycolor6">$\dot{Q}_\text{bottom,cond}$</p>
+          <p>$~+~$</p>
+          <p class="mycolor4">$\dot{Q}_\text{top,cond}$</p>
+          <p>$~+~$</p>
+          <p>$\dot{G}_\text{element}$</p>
+          <p>$~=~$</p>
+          <p>$0$</p>
+        </div>
+        <li class="fragment" data-fragment-index="3">.. or in terms of node numbers:</li>
+        <div class="singleline-la pad-top fragment" data-fragment-index="3">
           <p class="mycolor2">$kA \frac{T_{m-1,n}-T_{m,n}}{\Delta x}$</p>
           <p>$~+~$</p>
           <p class="mycolor5">$kA\frac{T_{m+1,n}-T_{m,n}}{\Delta x}$</p>
@@ -429,7 +430,7 @@
           <p class="mycolor6">$kA\frac{T_{m,n-1}-T_{m,n}}{\Delta y}$</p>
           <p>$~+..~$</p>
         </div>
-        <div class="singleline-left-aligned fragment" data-fragment-index="2">
+        <div class="singleline-la fragment" data-fragment-index="3">
           <p class="mycolor4">$kA\frac{T_{m,n+1}-T_{m,n}}{\Delta y}$</p>
           <p>$~+~$</p>
           <p>$\dot{g}_{m,n}(\Delta x \Delta y)$</p>
@@ -440,7 +441,104 @@
     </div>
     <div class="col-6">
       <div class="r-stack">
-        <img class="fragment" data-fragment-index="2" src="media/imgs/energy-balance-method-steady/energy-balance-internal-node-2d.svg" height="600">
+        <img class="fragment" data-fragment-index="0" src="media/imgs/energy-balance-method-steady/energy-balance-internal-node-2d-0.svg" height="1000">
+        <img class="fragment" data-fragment-index="2" src="media/imgs/energy-balance-method-steady/energy-balance-internal-node-2d-1.svg" height="1000">
+        <img class="fragment" data-fragment-index="3" src="media/imgs/energy-balance-method-steady/energy-balance-internal-node-2d-2.svg" height="1000">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>The energy balance equation for boundary nodes</h3>
+  <ul>
+    <li>Sum up heat transfer to/from volume element:</li>
+  </ul>
+  <ul>
+    <p>
+      $$
+      \small
+      \left(
+      \begin{array}{ccc}
+      \text{Sum of heat}\\
+      \text{transfer rate}\\
+      \text{across surfaces}\\
+      \text{of volume element}
+      \end{array}
+      \right)
+      +
+      \left( 
+      \begin{array}{ccc}
+      \text{Rate of heat}\\
+      \text{generation}\\
+      \text{inside the}\\
+      \text{element}
+      \end{array}
+      \right)
+      =
+      \left( 
+      \begin{array}{ccc}
+      \text{Rate of change}\\
+      \text{of the energy}\\
+      \text{content of}\\
+      \text{the element}
+      \end{array}
+      \right)
+      $$
+    </p>
+  </ul>
+  <ul class="fragment" data-fragment-index="1">
+    <p>
+      $$
+      \small
+      \sum_\text{all surfaces} \dot{Q} +
+      \dot{G}_\text{element}
+      =
+      \frac{\Delta E_\text{element}}{\Delta t}
+      $$
+    </p>
+  </ul>
+  <div class="grid">
+    <div class="col-6">
+      <ul>
+        <li class="fragment" data-fragment-index="2">For a volume element on the left boundary:</li>
+        <div class="singleline-la pad-top fragment" data-fragment-index="2">
+          <p class="mycolor2">$\dot{Q}_\text{left surface}$</p>
+          <p>$~+~$</p>
+          <p class="mycolor5">$\dot{Q}_\text{right,cond}$</p>
+          <p>$~+~$</p>
+          <p class="mycolor6">$\dot{Q}_\text{bottom,cond}$</p>
+          <p>$~+~$</p>
+          <p class="mycolor4">$\dot{Q}_\text{top,cond}$</p>
+          <p>$~+~$</p>
+          <p>$\dot{G}_\text{element}$</p>
+          <p>$~=~$</p>
+          <p>$0$</p>
+        </div>
+        <li class="fragment" data-fragment-index="3">.. or in terms of node numbers:</li>
+        <div class="singleline-la pad-top fragment" data-fragment-index="3">
+          <p class="mycolor2">$\dot{Q}_\text{left surface}$</p>
+          <p>$~+~$</p>
+          <p class="mycolor5">$kA\frac{T_{m+1,n}-T_{m,n}}{\Delta x}$</p>
+          <p>$~+~$</p>
+          <p class="mycolor6">$kA\frac{T_{m,n-1}-T_{m,n}}{\Delta y}$</p>
+          <p>$~+..~$</p>
+        </div>
+        <div class="singleline-la fragment" data-fragment-index="3">
+          <p class="mycolor4">$kA\frac{T_{m,n+1}-T_{m,n}}{\Delta y}$</p>
+          <p>$~+~$</p>
+          <p>$\dot{g}_{m,n}(\frac{\Delta x}{2} \Delta y)$</p>
+          <p>$~=~$</p>
+          <p>$0$</p>
+        </div>
+        <li class="fragment" data-fragment-index="3">The expression for <b class="mycolor2">$\dot{Q}_\text{left surface}$</b> depends on the type of boundary condition</li>
+      </ul>
+    </div>
+    <div class="col-6">
+      <div class="r-stack">
+        <img class="fragment" data-fragment-index="0" src="media/imgs/energy-balance-method-steady/energy-balance-boundary-node-2d-0.svg" height="1000">
+        <img class="fragment" data-fragment-index="2" src="media/imgs/energy-balance-method-steady/energy-balance-boundary-node-2d-1.svg" height="1000">
+        <img class="fragment" data-fragment-index="3" src="media/imgs/energy-balance-method-steady/energy-balance-boundary-node-2d-2.svg" height="1000">
       </div>
     </div>
   </div>
