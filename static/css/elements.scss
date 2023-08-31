@@ -83,14 +83,18 @@ em {
     margin-top: 0;
 }
 
-.singleline-left-aligned {
+.singleline-la {
     display: flex;
     justify-content: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
-  .singleline-center-aligned {
+  .singleline-ca {
     display: flex;
     justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
 .clearfix:after {

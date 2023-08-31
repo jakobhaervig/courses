@@ -406,7 +406,7 @@
   </ul>
   <div class="grid">
     <div class="col-6">
-      <div class="singleline fragment" data-fragment-index="2">
+      <div class="singleline-center-aligned fragment" data-fragment-index="2">
         <p class="mycolor2">$\dot{Q}_\text{left,cond}$</p>
         <p>$~+~$</p>
         <p class="mycolor5">$\dot{Q}_\text{right,cond}$</p>
@@ -421,22 +421,22 @@
       </div>
       <ul>
         <li>Sum up heat transfer to/from volume element:</li>
+        <div class="singleline-left-aligned fragment" data-fragment-index="2">
+          <p class="mycolor2">$kA \frac{T_{m-1,n}-T_{m,n}}{\Delta x}$</p>
+          <p>$~+~$</p>
+          <p class="mycolor5">$kA\frac{T_{m+1,n}-T_{m,n}}{\Delta x}$</p>
+          <p>$~+~$</p>
+          <p class="mycolor6">$kA\frac{T_{m,n-1}-T_{m,n}}{\Delta y}$</p>
+          <p>$~+..~$</p>
+        </div>
+        <div class="singleline-left-aligned fragment" data-fragment-index="2">
+          <p class="mycolor4">$kA\frac{T_{m,n+1}-T_{m,n}}{\Delta y}$</p>
+          <p>$~+~$</p>
+          <p>$\dot{g}_{m,n}(\Delta x \Delta y)$</p>
+          <p>$~=~$</p>
+          <p>$0$</p>
+        </div>
       </ul>
-      <div class="singleline fragment" data-fragment-index="2">
-        <p class="mycolor2">$kA \frac{T_{m-1,n}-T_{m,n}}{\Delta x}$</p>
-        <p>$~+~$</p>
-        <p class="mycolor5">$kA\frac{T_{m+1,n}-T_{m,n}}{\Delta x}$</p>
-        <p>$~+~$</p>
-        <p class="mycolor6">$kA\frac{T_{m,n-1}-T_{m,n}}{\Delta y}$</p>
-        <p>$~+..~$</p>
-      </div>
-      <div class="singleline fragment" data-fragment-index="2">
-        <p class="mycolor4">$kA\frac{T_{m,n+1}-T_{m,n}}{\Delta y}$</p>
-        <p>$~+~$</p>
-        <p>$\dot{g}_{m,n}(\Delta x \Delta y)$</p>
-        <p>$~=~$</p>
-        <p>$0$</p>
-      </div>
     </div>
     <div class="col-6">
       <div class="r-stack">
