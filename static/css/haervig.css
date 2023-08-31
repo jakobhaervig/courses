@@ -454,6 +454,12 @@ em {
   padding-top: 10px;
   padding-bottom: 10px; }
 
+.pad-top {
+  padding-top: 1em; }
+
+.pad-bottom {
+  padding-bottom: 1em; }
+
 .clearfix:after {
   content: "";
   display: table;
