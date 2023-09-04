@@ -66,7 +66,13 @@ Reveal.initialize({
         prefix: 'media/audio/main/',
         suffix: ".mp3",
         defaultDuration: 600
-    }
+    },
+    dependencies: [
+        // other dependencies
+        { src: '../static/js/quiz.js', async: true, callback: function() { prepareQuizzes({skipStartButton: true, disableRanking: true}); } }
+        // other dependencies
+    ]
+
     })
 
     window.addEventListener("load", function() {
