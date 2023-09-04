@@ -60,7 +60,7 @@ Reveal.initialize({
         ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre']
     },
     audio: {
-        autoplay: false,
+        autoplay: true,
         playerStyle: 'position: fixed; bottom: 0.7em; left: 25%; width: 50%; height:2em; z-index: 33;',
         defaultAudios: true,
         prefix: 'media/audio/main/',
