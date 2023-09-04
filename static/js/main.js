@@ -60,13 +60,19 @@ Reveal.initialize({
         ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre']
     },
     audio: {
-        autoplay: false,
+        autoplay: true,
         playerStyle: 'position: fixed; bottom: 0.7em; left: 25%; width: 50%; height:2em; z-index: 33;',
         defaultAudios: true,
         prefix: 'media/audio/main/',
         suffix: ".mp3",
         defaultDuration: 600
-    }
+    },
+    dependencies: [
+        // other dependencies
+        { src: '../static/js/quiz.js', async: true, callback: function() { prepareQuizzes({skipStartButton: true, disableRanking: true}); } }
+        // other dependencies
+    ]
+
     })
 
     window.addEventListener("load", function() {

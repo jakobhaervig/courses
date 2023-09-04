@@ -67,6 +67,7 @@
       <div class="r-stack">
         <img class="fragment" data-fragment-index="1" src="media/lumped-system-analysis/arbitrary-body-0.svg" height="800">
         <img class="fragment" data-fragment-index="2" src="media/lumped-system-analysis/arbitrary-body-1.svg" height="800">
+        <img class="fragment" data-fragment-index="3" src="media/lumped-system-analysis/arbitrary-body-2.svg" height="800">
       </div>
     </div>
   </div>
@@ -83,26 +84,31 @@
           <p class="fragment" data-fragment-index="2">$$~=\rho V c_p \text{d}T$$</p>
         </div>
         <li class="fragment" data-fragment-index="3">Because $T_\infty$ is constant, we may expand $\text{d}T$:</li>
-        <div class="singleline">
-          <p class="fragment" data-fragment-index="3"> $$ - h A_s (T-T_\infty) = \rho V c_p \text{d}(T-T_\infty)$$</p>
+        <div class="singleline-ca">
+          <p class="fragment" data-fragment-index="3">$$ h A_s (T_\infty-T) \text{d}t$$</p>
+          <p class="fragment" data-fragment-index="4">$$~= -h A_s (T-T_\infty) \text{d}t$$</p>
+          <p class="fragment" data-fragment-index="5">$$~= \rho V c_p \text{d}(T-T_\infty)$$</p>
         </div>
-          <li class="fragment" data-fragment-index="4">
+        <li class="fragment" data-fragment-index="6">..Re-arranging:</li>
+        <div class="singleline-ca">
+          <p class="fragment" data-fragment-index="6">$$ \frac{\text{d}(T-T_\infty)}{T-T_\infty} = -\frac{h A_s}{\rho V c_p} \text{d}t$$</p>
+        </div>
+          <li class="fragment" data-fragment-index="7">
         Now, intergrating from $t=0$ where $T=T_i$ to any time $t$ at which $T=T(t)$ we get:
         </li>
-        <div class="singleline">
-          <p class="fragment" data-fragment-index="4">$$\text{ln}\frac{T(t)-T_\infty}{T_i-T_\infty} = -\frac{h A_s (T-T_\infty)}{\rho V c_p}t$$</p>
+        <div class="singleline-ca">
+          <p class="fragment" data-fragment-index="7">$$\text{ln}\frac{T(t)-T_\infty}{T_i-T_\infty} = -\frac{h A_s}{\rho V c_p}t$$</p>
         </div>
-        <li class="fragment" data-fragment-index="5">Taking exponential on both sides, we finally obtain the <b class='definition'>lumped system equation</b>:</li>
-        <div class="singleline">
-          <p class="fragment" data-fragment-index="5">$$\frac{T(t)-T_\infty}{T_i-T_\infty} = \text{e}^{-\frac{h A_s}{\rho V c_p}t}$$</p>
-        </div>
+        <li class="fragment" data-fragment-index="8">Exponential on both sides gives <b class='definition'>lumped system equation</b>: $$\frac{T(t)-T_\infty}{T_i-T_\infty} = \text{e}^{-\frac{h A_s}{\rho V c_p}t}$$</li>
       </ul>
     </div>
     <div class="col-6">
       <div class="r-stack">
         <img src="media/lumped-system-analysis/arbitrary-body-0.svg" height="800">
         <img src="media/lumped-system-analysis/arbitrary-body-1.svg" height="800">
+        <img src="media/lumped-system-analysis/arbitrary-body-2.svg" height="800">
       </div>
+    </div>
   </div>
 </section>
 
@@ -111,20 +117,19 @@
   <div class="grid">
     <div class="col-6">
       <ul>
-        <li>The time constant describes at which rate the system approaches the surrounding temperature $T_\infty$</li>
-        <li class="fragment" data-fragment-index="2">Introducing $b=hA_s/(\rho V c_p)$, we obtain:</li>
-        <div class="singleline">
-          <p class="fragment" data-fragment-index="2">$$\frac{T(t)-T_\infty}{T_i-T_\infty} = \text{e}^{-\frac{h A_s}{\rho V c_p}t} = \text{e}^{-bt}$$</p>
+        <li>Introducing $b=hA_s/(\rho V c_p)$, we obtain:</li>
+        <div class="singleline-ca">
+          <p>$$\frac{T(t)-T_\infty}{T_i-T_\infty} = \text{e}^{-\frac{h A_s}{\rho V c_p}t} = \text{e}^{-bt}$$</p>
         </div>
-        <li class="fragment" data-fragment-index="3">The inverse of $b$, e.g. $1/b$ is called <b class='definition'>the time constant</b> and describes how quickly the sytem reaches the surrounding medium temperature</li>
+        <li class="fragment" data-fragment-index="2">The time constant ($1/b$) describes the rate at which the system approaches the surrounding temperature $T_\infty$</li>
         <ul>
-          <li class="fragment" data-fragment-index="4"><b class='definition'>Large $b$ value</b>, system approaches surrounding temperature <b class='definition'>quickly</b></li>
-          <li class="fragment" data-fragment-index="4"><b class='definition'>Small $b$ value</b>, system approaches surrounding temperature <b class='definition'>slowly</b></li>
+          <li class="fragment" data-fragment-index="3"><b class='definition'>Large $b$ value</b>, system approaches surrounding temperature <b class='definition'>quickly</b></li>
+          <li class="fragment" data-fragment-index="3"><b class='definition'>Small $b$ value</b>, system approaches surrounding temperature <b class='definition'>slowly</b></li>
         </ul>
       </ul>
     </div>
     <div class="col-6">
-      <div>
+      <div class="fragment" data-fragment-index="3">
         <img src="media/lumped-system-analysis/lumped-time-constants.svg" height="800">
       </div>
     </div>
@@ -159,11 +164,77 @@
 </section>
 
 <section>
-  <h3>Example</h3>
+  <h2>Example</h2>
   <div class="r-stack" style="padding: 10px;">
-    <video class="fragment current-visible" src="media/lumped-system-analysis/example1-test.mp4" controls poster="media/lecture-10/revisiting-the-adjoint-rep.svg" type="video/mp4">
+    <video src="media/lumped-system-analysis/example1.mp4" controls poster=media/lumped-system-analysis/example1-start.png" type="video/mp4">
     </video>
-    <img class="fragment" src="media/l ecture-10/revisiting-the-adjoint-rep.svg" alt="Final vidoe frame for orthogonality proof.">
+    <img class="fragment" src="media/lumped-system-analysis/example1-end.png" alt="">
   </div>
 </div>
+</section>
+
+<section>
+  <script data-quiz>
+    quiz = {
+            "info": {
+                    "name":    "Quiz",
+                    "main":    "Test your knowledge about lumped system analysis"
+            },
+            "questions": [
+                    {
+                            "q": "What is lumped system analysis?",
+                            "a": [
+                                    {"option": "An approach to solve steady-state heat transfer problems", "correct": false},
+                                    {"option": "An approach to solve trasient heat transfer problems", "correct": true}
+                            ],
+                            "correct": "<p><span>That's right!</span> It's a simplified way to calculate transient heat transfer to objects that can be classied as lumped.</p>",
+                            "incorrect": "<p><span>Wrong!</span> It's only valid for transient heat transfer problems.</p>" // no comma here
+                          },
+                    {
+                            "q": "What is the criteria for it to be valid?",
+                            "a": [
+                                    {"option": "Biot number below 0.1",     "correct": true},
+                                    {"option": "Biot number between 0.1 and 1",      "correct": false},
+                                    {"option": "Biot number above 1",     "correct": false} // no comma here
+                            ],
+                            "correct": "<p><span>That's right!</span> The lumped system assumption is only valid when the Biot number is below 0.1. The Biot number is a measure of the ratio of conduction resistance inside the body to convection resistance at the surface of the body. A value of 0.1 means heat is transferred much faster inside the object compared to heat transfer rate at the surface.</p>",
+                            "incorrect": "<p><span>That's wrong!</span> The lumped system assumption is only valid when the Biot number is below 0.1. The Biot number is a measure of the ratio of conduction resistance inside the body to convection resistance at the surface of the body. A value of 0.1 means heat is transferred much faster inside the object compared to heat transfer rate at the surface.</p>"
+                    },
+                    {
+                            "q": "In what medium is the lumped system analysis more likely to be applicable?",
+                            "a": [
+                                    {"option": "Water",     "correct": false},
+                                    {"option": "Air",      "correct": true},
+                            ],
+                            "correct": "<p><span>That's right!</span> Because the heat transfer coefficient is smaller in air, heat has 'more' time to distribute inside the body, which makes the lumped system analysis more likely to be applicable for objects surrounded by air.</p>",
+                            "incorrect": "<p><span>That's wrong!</span> Because the heat transfer coefficient is smaller in air, heat has 'more' time to distribute inside the body, which makes the lumped system analysis more likely to be applicable for objects surrounded by air.</p>"
+                    },
+                    {
+                            "q": "For which solid is the lumped system analysis more likely to be applicable?",
+                            "a": [
+                                    {"option": "An actual apple", "correct": false},
+                                    {"option": "A golden apple of the same size", "correct": true},
+                            ],
+                            "correct": "<p><span>That's right!</span> A golden apple has a much higher thermal conductivity than an actual apple. As a result heat transfers much quicker, which results in a lower Biot number for the golden apple.</p>",
+                            "incorrect": "<p><span>That's wrong!</span> A golden apple has a much higher thermal conductivity than an actual apple. As a result heat transfers much quicker, which results in a lower Biot number for the golden apple.</p>"
+                    },
+                    {
+                            "q": "Consider a hot baked potato on a plate. The temperature of the potato is observed to drop by 4°C during the first minute. At which rate will the temperature drop during a second one minute later in time?",
+                            "a": [
+                                    {"option": "Faster", "correct": false},
+                                    {"option": "Slower", "correct": true},
+                                    {"option": "Rate rate", "correct": false},              
+                            ],
+                            "correct": "<p><span>That's right!</span> It's the temperature difference between the potato and the surroundings that determine the rate of heat transfer. As the temperature approaches the surrounding's temperature, the rate of heat transfer will decrease and approach 0 assymptotically.</p>",
+                            "incorrect": "<p><span>That's right!</span> It's the temperature difference between the potato and the surroundings that determine the rate of heat transfer. As the temperature approaches the surrounding's temperature, the rate of heat transfer will decrease and approach 0 assymptotically.</p>"
+                    },
+            ]
+    }
+  </script>
+</section>
+
+<section>
+  <h2>Course in Heat Transfer</h2>
+  <h3>Lumped system analysis</h3>
+  <h3>The End</h3>
 </section>
