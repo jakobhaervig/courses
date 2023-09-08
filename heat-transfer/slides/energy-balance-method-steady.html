@@ -5,6 +5,32 @@
 </section>
 
 <section>
+  <h3>Motivation</h3>
+  <div class="grid">
+    <div class="col-6">
+      <ul>
+        <li><p>A <b class="definition">1D plane wall</b> is defined as being infinitely long (i.e. heat transfer only occurs in one direction)</p></li>
+        <li class="fragment" data-fragment-index="1">It extends from $x=0$ to $x=L$</li>
+        <li class="fragment" data-fragment-index="2">We discretise into $M$ nodes from $m=0$ to $m=M$</li>
+        <li class="fragment" data-fragment-index="3">Distance between nodes is $\Delta x$</li>
+        <li class="fragment" data-fragment-index="4">We form a volume element around each node which naturally also has width $\Delta x$</li>
+      </ul>
+    </div>
+   <div class="col-6">
+      <div class="r-stack">
+        <img src="media/energy-balance-method-steady/energy-balance-notation_0.svg" height="1000">
+        <img class="fragment" data-fragment-index="4" src="media/energy-balance-method-steady/energy-balance-notation_5.svg" height="1000">
+        <img class="fragment" data-fragment-index="4" src="media/energy-balance-method-steady/energy-balance-notation_6.svg" height="1000">
+        <img class="fragment" data-fragment-index="1" src="media/energy-balance-method-steady/energy-balance-notation_1.svg" height="1000">
+        <img class="fragment" data-fragment-index="2" src="media/energy-balance-method-steady/energy-balance-notation_2.svg" height="1000">
+        <img class="fragment" data-fragment-index="2" src="media/energy-balance-method-steady/energy-balance-notation_3.svg" height="1000">
+        <img class="fragment" data-fragment-index="3" src="media/energy-balance-method-steady/energy-balance-notation_4.svg" height="1000">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
   <h2>One-dimenensional problems</h2>
 </section>
 
@@ -36,66 +62,88 @@
 
 <section>
   <h3>The energy balance equation</h3>
-  <ul>
-    <li>We sum up heat transfer to/from volume element:</li>
-  </ul>
-  <ul>
-    <p>
-      $$
-      \small
-      \left(
-      \begin{array}{ccc}
-      \text{Sum of heat}\\
-      \text{transfer rate}\\
-      \text{across surfaces}\\
-      \text{of volume element}
-      \end{array}
-      \right)
-      +
-      \left( 
-      \begin{array}{ccc}
-      \text{Rate of heat}\\
-      \text{generation}\\
-      \text{inside the}\\
-      \text{element}
-      \end{array}
-      \right)
-      =
-      \left( 
-      \begin{array}{ccc}
-      \text{Rate of change}\\
-      \text{of the energy}\\
-      \text{content of}\\
-      \text{the element}
-      \end{array}
-      \right)
-      $$
-    </p>
-  </ul>
-  <ul class="fragment" data-fragment-index="2">
-    <li>For <b class="definition">unsteady heat transfer</b>, e.g. transient:</li>
-    <p>
-      $$
-      \small
-      \sum_\text{all surfaces} Q +
-      \dot{G}_\text{element}
-      =
-      \frac{\Delta E_\text{element}}{\Delta t}
-      $$
-    </p>
-  </ul>
-  <ul class="fragment" data-fragment-index="3">
-    <li>For <b class="definition">steady heat transfer</b>, e.g. no change in time:</li>
-    <p>
-      $$
-      \small
-      \sum_\text{all surfaces} Q +
-      \dot{G}_\text{element}
-      =
-      0
-      $$
-    </p>
-  </ul>
+  <div class="grid">
+    <div class="col-6">
+      <ul>
+        <li>We sum up heat transfer to/from volume element:</li>
+      </ul>
+      <ul>
+        <p>
+          $$
+          \small
+          \left(
+          \begin{array}{ccc}
+          \text{Sum of heat}\\
+          \text{transfer rate}\\
+          \text{across surfaces}\\
+          \text{of volume element}
+          \end{array}
+          \right)
+          +
+          \left( 
+          \begin{array}{ccc}
+          \text{Rate of heat}\\
+          \text{generation}\\
+          \text{inside the}\\
+          \text{element}
+          \end{array}
+          \right)
+          =
+          \left( 
+          \begin{array}{ccc}
+          \text{Rate of change}\\
+          \text{of the energy}\\
+          \text{content of}\\
+          \text{the element}
+          \end{array}
+          \right)
+          $$
+        </p>
+      </ul>
+      <ul class="fragment" data-fragment-index="2">
+        <li>For <b class="definition">unsteady heat transfer</b>, e.g. transient:</li>
+        <p>
+          $$
+          \small
+          \sum_\text{all surfaces} \dot{Q} +
+          \dot{G}_\text{element}
+          =
+          \frac{\Delta E_\text{element}}{\Delta t}
+          $$
+        </p>
+      </ul>
+      <ul class="fragment" data-fragment-index="3">
+        <li>For <b class="definition">steady heat transfer</b>, e.g. no change in time:</li>
+        <p>
+          $$
+          \small
+          \sum_\text{all surfaces} \dot{Q} +
+          \dot{G}_\text{element}
+          =
+          0
+          $$
+        </p>
+      </ul>
+      <ul class="fragment" data-fragment-index="4">
+        <li>$\dot{G}_\text{element}$ is the heat generation rate in the element (W):</li>
+        <p>
+          $$
+          \dot{G}_\text{element} = \dot{g}V_\text{element}
+          $$
+        </p>
+      </ul>
+      <ul class="fragment" data-fragment-index="5">
+        <ul>
+          <li>$\dot{g}$ is the volumetric heat generation rate in the element ($\text{W}/\text{m}^3$)</li>
+        </ul>
+      </ul>
+    </div>
+   <div class="col-6">
+      <div class="r-stack">
+        <img src="media/energy-balance-method-steady/energy-balance.svg" height="1000">
+      </div>
+    </div>
+  </div>
 </section>
 
 <section>
@@ -441,9 +489,9 @@
     </div>
     <div class="col-6">
       <div class="r-stack">
-        <img class="fragment" data-fragment-index="0" src="media/energy-balance-method-steady/energy-balance-internal-node-2d-0.svg" height="1000">
-        <img class="fragment" data-fragment-index="2" src="media/energy-balance-method-steady/energy-balance-internal-node-2d-1.svg" height="1000">
-        <img class="fragment" data-fragment-index="3" src="media/energy-balance-method-steady/energy-balance-internal-node-2d-2.svg" height="1000">
+        <img class="fragment" data-fragment-index="0" src="media/energy-balance-method-steady/energy-balance-internal-node-2d-0.svg" height="600">
+        <img class="fragment" data-fragment-index="2" src="media/energy-balance-method-steady/energy-balance-internal-node-2d-1.svg" height="600">
+        <img class="fragment" data-fragment-index="3" src="media/energy-balance-method-steady/energy-balance-internal-node-2d-2.svg" height="600">
       </div>
     </div>
   </div>
