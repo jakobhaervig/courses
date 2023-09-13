@@ -4,31 +4,23 @@
   <h3>Topic 2</h3>
 </section>
 
-<section>
+<!-- <section>
   <h3>Motivation</h3>
   <div class="grid">
     <div class="col-6">
       <ul>
-        <li><p>A <b class="definition">1D plane wall</b> is defined as being infinitely long (i.e. heat transfer only occurs in one direction)</p></li>
-        <li class="fragment" data-fragment-index="1">It extends from $x=0$ to $x=L$</li>
-        <li class="fragment" data-fragment-index="2">We discretise into $M$ nodes from $m=0$ to $m=M$</li>
-        <li class="fragment" data-fragment-index="3">Distance between nodes is $\Delta x$</li>
-        <li class="fragment" data-fragment-index="4">We form a volume element around each node which naturally also has width $\Delta x$</li>
+        <li>Modern electronics increase in temperature because the size shrinks.$</li>
+        <li class="fragment" data-fragment-index="1">We discretise into $M$ nodes from $m=0$ to $m=M$</li>
+        <li class="fragment" data-fragment-index="2">Distance between nodes is $\Delta x$</li>
+        <li class="fragment" data-fragment-index="3">We form a volume element around each node which naturally also has width $\Delta x$</li>
       </ul>
     </div>
    <div class="col-6">
-      <div class="r-stack">
-        <img src="media/energy-balance-method-steady/energy-balance-notation_0.svg" height="1000">
-        <img class="fragment" data-fragment-index="4" src="media/energy-balance-method-steady/energy-balance-notation_5.svg" height="1000">
-        <img class="fragment" data-fragment-index="4" src="media/energy-balance-method-steady/energy-balance-notation_6.svg" height="1000">
-        <img class="fragment" data-fragment-index="1" src="media/energy-balance-method-steady/energy-balance-notation_1.svg" height="1000">
-        <img class="fragment" data-fragment-index="2" src="media/energy-balance-method-steady/energy-balance-notation_2.svg" height="1000">
-        <img class="fragment" data-fragment-index="2" src="media/energy-balance-method-steady/energy-balance-notation_3.svg" height="1000">
-        <img class="fragment" data-fragment-index="3" src="media/energy-balance-method-steady/energy-balance-notation_4.svg" height="1000">
-      </div>
+        <img src="media/energy-balance-method-steady/cpu.jpg" height="400">
+        <img class="fragment" data-fragment-index="1" src="media/energy-balance-method-steady/fins.jpg" height="400">
     </div>
   </div>
-</section>
+</section> -->
 
 <section>
   <h2>One-dimenensional problems</h2>
@@ -132,7 +124,7 @@
           $$
         </p>
       </ul>
-      <ul class="fragment" data-fragment-index="5">
+      <ul class="fragment" data-fragment-index="4">
         <ul>
           <li>$\dot{g}$ is the volumetric heat generation rate in the element ($\text{W}/\text{m}^3$)</li>
         </ul>
@@ -340,6 +332,11 @@
 </section>
 
 <section>
+  <h2>Example</h2>
+    <iframe width="1440" height="810" src="https://www.youtube.com/embed/wunH6dYNyJM"></iframe>
+</section>
+
+<section>
   <h3>Interfaces between different materials</h3>
   <div class="grid">
     <div class="col-6">
@@ -375,16 +372,16 @@
   <div class="grid">
     <div class="col-6">
       <ul>
-        <li class="fragment" data-fragment-index="1">Double subscripts ($m$,$n$) to denote two dimensions (triple for three dimensions)</li>
-        <ul class="fragment" data-fragment-index="1">
+        <li>Double subscripts ($m$,$n$) to denote two dimensions (triple for three dimensions)</li>
+        <ul>
           <li>$m$ used for $x$-direction</li>
           <li>$n$ used for $y$-direction</li>
         </ul>
-        <li class="fragment" data-fragment-index="2">Temperature at node ($m=5$, $n=4$) is written $T_{5,4}$</li>
-        <li class="fragment" data-fragment-index="3">Distances between nodes are $\Delta x$ and $\Delta y$</li>
-        <li class="fragment" data-fragment-index="4">Form volume elements around each node</li>
-        <li class="fragment" data-fragment-index="5">Convert from node number to actual coordinates by:</li>
-        <ul class="fragment" data-fragment-index="5">
+        <li class="fragment" data-fragment-index="1">Temperature at node ($m=5$, $n=4$) is written $T_{5,4}$</li>
+        <li class="fragment" data-fragment-index="2">Distances between nodes are $\Delta x$ and $\Delta y$</li>
+        <li class="fragment" data-fragment-index="3">Form volume elements around each node</li>
+        <li class="fragment" data-fragment-index="4">Convert from node number to actual coordinates by:</li>
+        <ul class="fragment" data-fragment-index="4">
           <li>$x=m\Delta x$</li>
           <li>$y=n\Delta y$</li>
         </ul>
@@ -395,9 +392,9 @@
         <img src="media/energy-balance-method-steady/energy-balance-notation-2d-0.svg" height="1000">
         <img src="media/energy-balance-method-steady/energy-balance-notation-2d-1.svg" height="1000">
         <img src="media/energy-balance-method-steady/energy-balance-notation-2d-2.svg" height="1000">
-        <img class="fragment" data-fragment-index="1" src="media/energy-balance-method-steady/energy-balance-notation-2d-3.svg" height="1000">
-        <img class="fragment" data-fragment-index="3" src="media/energy-balance-method-steady/energy-balance-notation-2d-4.svg" height="1000">
-        <img class="fragment" data-fragment-index="4" src="media/energy-balance-method-steady/energy-balance-notation-2d-5.svg" height="1000">
+        <img src="media/energy-balance-method-steady/energy-balance-notation-2d-3.svg" height="1000">
+        <img class="fragment" data-fragment-index="2" src="media/energy-balance-method-steady/energy-balance-notation-2d-4.svg" height="1000">
+        <img class="fragment" data-fragment-index="3" src="media/energy-balance-method-steady/energy-balance-notation-2d-5.svg" height="1000">
       </div>
     </div>
   </div>
@@ -567,13 +564,13 @@
         <div class="singleline-la pad-top fragment" data-fragment-index="3">
           <p class="mycolor2">$\dot{Q}_\text{left surface}$</p>
           <p>$~+~$</p>
-          <p class="mycolor5">$kA\frac{T_{1,n}-T_{0,n}}{\Delta x}$</p>
+          <p class="mycolor5">$k\Delta y\frac{T_{1,n}-T_{0,n}}{\Delta x}$</p>
           <p>$~+~$</p>
-          <p class="mycolor6">$kA\frac{T_{0,n-1}-T_{0,n}}{\Delta y}$</p>
+          <p class="mycolor6">$k\frac{\Delta x}{2}\frac{T_{0,n-1}-T_{0,n}}{\Delta y}$</p>
           <p>$~+..~$</p>
         </div>
         <div class="singleline-la fragment" data-fragment-index="3">
-          <p class="mycolor4">$kA\frac{T_{0,n+1}-T_{0,n}}{\Delta y}$</p>
+          <p class="mycolor4">$k\frac{\Delta x}{2}\frac{T_{0,n+1}-T_{0,n}}{\Delta y}$</p>
           <p>$~+~$</p>
           <p>$\dot{g}_{0,n}(\frac{\Delta x}{2} \Delta y)$</p>
           <p>$~=~$</p>
@@ -584,12 +581,17 @@
     </div>
     <div class="col-6">
       <div class="r-stack">
-        <img class="fragment" data-fragment-index="0" src="media/energy-balance-method-steady/energy-balance-boundary-node-2d-0.svg" height="1000">
-        <img class="fragment" data-fragment-index="2" src="media/energy-balance-method-steady/energy-balance-boundary-node-2d-1.svg" height="1000">
-        <img class="fragment" data-fragment-index="3" src="media/energy-balance-method-steady/energy-balance-boundary-node-2d-2.svg" height="1000">
+        <img class="fragment" data-fragment-index="0" src="media/energy-balance-method-steady/energy-balance-boundary-node-2d-0.svg" height="600">
+        <img class="fragment" data-fragment-index="2" src="media/energy-balance-method-steady/energy-balance-boundary-node-2d-1.svg" height="600">
+        <img class="fragment" data-fragment-index="3" src="media/energy-balance-method-steady/energy-balance-boundary-node-2d-2.svg" height="600">
       </div>
     </div>
   </div>
+</section>
+
+<section>
+  <h2>Example</h2>
+    <iframe width="1440" height="810" src="https://www.youtube.com/embed/_0MVKrRYIG8"></iframe>
 </section>
 
 <section>
@@ -603,12 +605,83 @@
     Coarse representation by coarse structured grid
     </div>
     <div class="col-4">
-      <img src="media/energy-balance-method-steady/irregular-boundary-1.svg" height="600">
-    Better representation by refined structured grid
+      <img class="fragment" data-fragment-index="1" src="media/energy-balance-method-steady/irregular-boundary-1.svg" height="600">
+      <p class="fragment" data-fragment-index="1">Better representation by refined structured grid</p>
     </div>
     <div class="col-4">
-      <img src="media/energy-balance-method-steady/irregular-boundary-2.svg" height="600">
-    Even better presentation by body-fitted grid
+      <img class="fragment" data-fragment-index="2" src="media/energy-balance-method-steady/irregular-boundary-2.svg" height="600">
+    <p class="fragment" data-fragment-index="2">Even better presentation by body-fitted grid</p>
     </div>
   </div>
+</section>
+
+<!-- <section>
+  <h2>Example</h2>
+    <iframe width="1440" height="810" src="https://www.youtube.com/embed/NaYRxVOR-x8"></iframe>
+</section>
+
+<section>
+  <script data-quiz>
+    quiz = {
+            "info": {
+                    "name":    "Quiz",
+                    "main":    "Test your knowledge about lumped system analysis"
+            },
+            "questions": [
+                    {
+                            "q": "What is lumped system analysis?",
+                            "a": [
+                                    {"option": "An approach to solve steady-state heat transfer problems", "correct": false},
+                                    {"option": "An approach to solve trasient heat transfer problems", "correct": true}
+                            ],
+                            "correct": "<p><span>That's right!</span> It's a simplified way to calculate transient heat transfer to objects that can be classied as lumped.</p>",
+                            "incorrect": "<p><span>Wrong!</span> It's only valid for transient heat transfer problems.</p>" // no comma here
+                          },
+                    {
+                            "q": "What is the criteria for it to be valid?",
+                            "a": [
+                                    {"option": "Biot number below 0.1",     "correct": true},
+                                    {"option": "Biot number between 0.1 and 1",      "correct": false},
+                                    {"option": "Biot number above 1",     "correct": false} // no comma here
+                            ],
+                            "correct": "<p><span>That's right!</span> The lumped system assumption is only valid when the Biot number is below 0.1. The Biot number is a measure of the ratio of conduction resistance inside the body to convection resistance at the surface of the body. A value of 0.1 means heat is transferred much faster inside the object compared to heat transfer rate at the surface.</p>",
+                            "incorrect": "<p><span>That's wrong!</span> The lumped system assumption is only valid when the Biot number is below 0.1. The Biot number is a measure of the ratio of conduction resistance inside the body to convection resistance at the surface of the body. A value of 0.1 means heat is transferred much faster inside the object compared to heat transfer rate at the surface.</p>"
+                    },
+                    {
+                            "q": "In what medium is the lumped system analysis more likely to be applicable?",
+                            "a": [
+                                    {"option": "Water",     "correct": false},
+                                    {"option": "Air",      "correct": true},
+                            ],
+                            "correct": "<p><span>That's right!</span> Because the heat transfer coefficient is smaller in air, heat has 'more' time to distribute inside the body, which makes the lumped system analysis more likely to be applicable for objects surrounded by air.</p>",
+                            "incorrect": "<p><span>That's wrong!</span> Because the heat transfer coefficient is smaller in air, heat has 'more' time to distribute inside the body, which makes the lumped system analysis more likely to be applicable for objects surrounded by air.</p>"
+                    },
+                    {
+                            "q": "For which solid is the lumped system analysis more likely to be applicable?",
+                            "a": [
+                                    {"option": "An actual apple", "correct": false},
+                                    {"option": "A golden apple of the same size", "correct": true},
+                            ],
+                            "correct": "<p><span>That's right!</span> A golden apple has a much higher thermal conductivity than an actual apple. As a result heat transfers much quicker, which results in a lower Biot number for the golden apple.</p>",
+                            "incorrect": "<p><span>That's wrong!</span> A golden apple has a much higher thermal conductivity than an actual apple. As a result heat transfers much quicker, which results in a lower Biot number for the golden apple.</p>"
+                    },
+                    {
+                            "q": "Consider a hot baked potato on a plate. The temperature of the potato is observed to drop by 4°C during the first minute. At which rate will the temperature drop during a second one minute later in time?",
+                            "a": [
+                                    {"option": "Faster", "correct": false},
+                                    {"option": "Slower", "correct": true},
+                                    {"option": "Rate rate", "correct": false},              
+                            ],
+                            "correct": "<p><span>That's right!</span> It's the temperature difference between the potato and the surroundings that determine the rate of heat transfer. As the temperature approaches the surrounding's temperature, the rate of heat transfer will decrease and approach 0 assymptotically.</p>",
+                            "incorrect": "<p><span>That's right!</span> It's the temperature difference between the potato and the surroundings that determine the rate of heat transfer. As the temperature approaches the surrounding's temperature, the rate of heat transfer will decrease and approach 0 assymptotically.</p>"
+                    },
+            ]
+    }
+  </script>
+</section> -->
+
+<section>
+  <h2>Course in Heat Transfer</h2>
+  <h3>Steady heat transfer with the energy balance method</h3>
+  <h3>The End</h3>
 </section>
