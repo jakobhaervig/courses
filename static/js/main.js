@@ -1,7 +1,7 @@
 Reveal.initialize({
     width: 1920, // 1460
     height: 1080, // 1050
-    margin: 0.04,
+    margin: 0.06,
     minScale: 0.2,
     maxScale: 2.0,
     center: true,
@@ -60,12 +60,9 @@ Reveal.initialize({
         ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre']
     },
     audio: {
-        autoplay: true,
         playerStyle: 'position: fixed; bottom: 0.7em; left: 25%; width: 50%; height:2em; z-index: 33;',
-        defaultAudios: true,
         prefix: 'media/audio/main/',
         suffix: ".mp3",
-        defaultDuration: 600
     },
     dependencies: [
         // other dependencies
