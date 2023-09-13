@@ -48,7 +48,7 @@ Reveal.initialize({
         // element will be used.
         // Note: that a section data-menu-title attribute or an element
         // with a menu-title class will take precedence over this option
-        titleSelector: 'h3, h2 ,h4, h5, h6',
+        titleSelector: 'h3',
     
         // If slides do not have a matching title, attempt to use the
         // start of the text content as the title instead
