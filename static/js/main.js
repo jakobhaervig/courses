@@ -199,6 +199,7 @@ Reveal.initialize({
         playerStyle: 'position: fixed; bottom: 0.7em; left: 25%; width: 50%; height:2em; z-index: 33;',
         prefix: 'media/audio/main/',
         suffix: ".mp3",
+        defaultDuration: 3600,
     },
     dependencies: [
         // other dependencies
