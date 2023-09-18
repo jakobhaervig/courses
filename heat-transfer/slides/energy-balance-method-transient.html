@@ -125,10 +125,8 @@
         </div>
       </ul>
       <div class="r-stack">
-        <img class="fragment" data-fragment-index="2" src="media/energy-balance-method-transient/energy-balance-notation-transient-0.svg" height="600">
-        <img class="fragment" data-fragment-index="2" src="media/energy-balance-method-transient/energy-balance-notation-transient-1.svg" height="600">
-        <img class="fragment" data-fragment-index="2" src="media/energy-balance-method-transient/energy-balance-notation-transient-2.svg" height="600">
-        <img class="fragment" data-fragment-index="2" src="media/energy-balance-method-transient/energy-balance-notation-transient-3.svg" height="600">
+        <img class="fragment" data-fragment-index="2" src="media/energy-balance-method-transient/energy-balance-interior-node-0.svg" height="600">
+        <img class="fragment" data-fragment-index="2" src="media/energy-balance-method-transient/energy-balance-interior-node-1.svg" height="600">
       </div>
     </div>
     <div class="col-6">
@@ -150,17 +148,15 @@
         </div>
       </ul>
       <div class="r-stack">
-        <img class="fragment" data-fragment-index="3" src="media/energy-balance-method-transient/energy-balance-notation-transient-0.svg" height="600">
-        <img class="fragment" data-fragment-index="3" src="media/energy-balance-method-transient/energy-balance-notation-transient-1.svg" height="600">
-        <img class="fragment" data-fragment-index="3" src="media/energy-balance-method-transient/energy-balance-notation-transient-2.svg" height="600">
-        <img class="fragment" data-fragment-index="3" src="media/energy-balance-method-transient/energy-balance-notation-transient-4.svg" height="600">
+        <img class="fragment" data-fragment-index="2" src="media/energy-balance-method-transient/energy-balance-interior-node-0.svg" height="600">
+        <img class="fragment" data-fragment-index="2" src="media/energy-balance-method-transient/energy-balance-interior-node-2.svg" height="600">
       </div>
     </div>
   </div>
 </section>
 
 <section>
-  <h3>Interior nodes using explicit solution methods</h3>
+  <h3>Interior nodes using explicit solution method</h3>
   <div class="grid">
     <div class="col-6">
       <ul>
@@ -168,7 +164,7 @@
         <div class="singleline-ca">
           $$\begin{aligned}
           kA\frac{\textcolor{#008000}{T_{m-1}^i}-\textcolor{#008000}{T_{m}^i}}{\Delta x} + kA\frac{\textcolor{#008000}{T_{m+1}^i}-\textcolor{#008000}{T_{m}^i}}{\Delta x}+
-          \dot{G}_\text{element}^i=\frac{\rho V c_p (T_m^{i+1}-T_m^i)}{\Delta t}
+          \dot{g}_\text{m}^iA\Delta x=\frac{\rho V c_p (T_m^{i+1}-T_m^i)}{\Delta t}
           \end{aligned}$$
         </div>
         <li class="fragment" data-fragment-index="1">Re-arranging:</li>
@@ -194,31 +190,29 @@
     </div>
     <div class="col-6">
       <div class="r-stack">
-        <img src="media/energy-balance-method-transient/energy-balance-notation-transient-0.svg" height="600">
-        <img src="media/energy-balance-method-transient/energy-balance-notation-transient-1.svg" height="600">
-        <img src="media/energy-balance-method-transient/energy-balance-notation-transient-2.svg" height="600">
-        <img src="media/energy-balance-method-transient/energy-balance-notation-transient-3.svg" height="600">
+        <img src="media/energy-balance-method-transient/energy-balance-interior-node-0.svg" height="600">
+        <img src="media/energy-balance-method-transient/energy-balance-interior-node-1.svg" height="600">
       </div>
     </div>
   </div>
 </section>
 
 <section>
-  <h3>Solution strategy for advancing in time with explicit solution methods</h3>
+  <h3>Boundary nodes using explicit solution method</h3>
   <div class="grid">
     <div class="col-6">
       <ul>
         <li><b class="mycolor0">Explicit</b> method:</li>
         <div class="singleline-ca">
           $$\begin{aligned}
-          kA\frac{\textcolor{#008000}{T_{m-1}^i}-\textcolor{#008000}{T_{m}^i}}{\Delta x} + kA\frac{\textcolor{#008000}{T_{m+1}^i}-\textcolor{#008000}{T_{m}^i}}{\Delta x}+
-          \dot{G}_\text{element}^i=\frac{\rho V c_p (T_m^{i+1}-T_m^i)}{\Delta t}
+          hA(T_\infty-\textcolor{#008000}{T_0^i}) + kA\frac{\textcolor{#008000}{T_1^i}-\textcolor{#008000}{T_0^i}}{\Delta x}+
+          \dot{g}_\text{m}^iA\frac{\Delta x}{2}=\frac{\rho V c_p (T_m^{i+1}-T_m^i)}{\Delta t}
           \end{aligned}$$
         </div>
         <li class="fragment" data-fragment-index="1">Re-arranging:</li>
         <div class="singleline-ca fragment" data-fragment-index="1">
           $$\begin{aligned}
-          \textcolor{#008000}{T_{m-1}^i}-2\textcolor{#008000}{T_{m}^i}+\textcolor{#008000}{T_{m+1}^i} + \frac{\dot{q}_m^i \Delta x^2}{k} = \frac{\Delta x^2}{\alpha \Delta t}\left(T_m^{i+1}-T_m^i\right)
+          \left(\frac{-2h\Delta x}{k}-2\right)T_0^i+2T_{m+1}^i+\left(\frac{-2h\Delta x}{k}\right)T_\infty+\dot{g}_0^i\frac{(\Delta x)^2}{k} = \frac{\Delta x^2}{\alpha \Delta t}\left(T_m^{i+1}-T_m^i\right)
           \end{aligned}$$
         </div>
         <li class="fragment" data-fragment-index="2">Defining $\tau=\alpha\Delta t/\Delta x^2$:</li>
@@ -237,6 +231,30 @@
       </ul>
     </div>
     <div class="col-6">
+      <div class="r-stack">
+        <img src="media/energy-balance-method-transient/energy-balance-boundary-node-0.svg" height="600">
+        <img src="media/energy-balance-method-transient/energy-balance-boundary-node-1.svg" height="600">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Solution strategy for advancing in time with explicit solution methods</h3>
+  <div class="grid">
+    <div class="col-8">
+      <ul>
+        <li>Step 1: Start at $t=0$ s with a known temperature field (initial condition)</li>
+        <li>Step 2: Solve eq to advance in time:</li>
+        <div class="singleline-ca fragment" data-fragment-index="1">
+          $$\begin{aligned}
+          \textcolor{#b52025}{T_m^{i+1}} = \tau(T_{m-1}^i+T_{m+1}^i)+(1-2\tau)T_m^i+\tau\frac{\dot{g}_m^i \Delta x^2}{k}
+          \end{aligned}$$
+        </div>
+        <li class="fragment" data-fragment-index="4">1 equation for each node with 1 unknown &#128513</li>
+      </ul>
+    </div>
+    <div class="col-4">
       <div class="r-stack">
         <img src="media/energy-balance-method-transient/energy-balance-notation-transient-0.svg" height="600">
         <img src="media/energy-balance-method-transient/energy-balance-notation-transient-1.svg" height="600">
