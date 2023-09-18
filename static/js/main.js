@@ -193,6 +193,7 @@ Reveal.initialize({
                 display: true
             }
         ],
+        
         ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre']
     },
     audio: {
