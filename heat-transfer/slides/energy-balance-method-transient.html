@@ -240,18 +240,41 @@
 </section>
 
 <section>
-  <h3>Example</h3>
-<!--     <iframe width="1440" height="810" src="https://www.youtube.com/embed/_0MVKrRYIG8"></iframe> -->
+  <h3>Example (explicit)</h3>
+    <iframe width="1440" height="810" src="https://www.youtube.com/embed/EhWt84ZGf54"></iframe>
+</section>
+
+<section>
+  <h3>Coding with MATLAB (explicit)</h3>
+    <iframe width="1440" height="810" src="https://www.youtube.com/embed/81OrpNy9e9s"></iframe>
 </section>
 
 <section>
   <h3>Stability criterion for the explicit solution method</h3>
-  <div class="grid">
-    <div class="col-6">
-    </div>
-    <div class="col-6">
-    </div>
-  </div>
+      <ul>
+        <li><b class="definition">Problem: </b>Explicit solution method may diverge if time step size is too large!</li>
+        <li class="fragment" data-fragment-index="1"><b class="definition">Stability criterion: </b>Coefficient in front of $T_m^i$ should be larger than zero</li>
+        <ul>
+          <li class="fragment" data-fragment-index="2">An interior node:</li>
+          <div class="singleline-ca fragment" data-fragment-index="2">
+            $$\begin{aligned}
+            T_m^{i+1} = \tau(T_{m-1}^i+T_{m+1}^i)+\textcolor{#b52025}{(1-2\tau)}T_m^i+\tau\frac{\dot{g}_m^i (\Delta x)^2}{k}
+            \end{aligned}$$
+          </div>
+          <ul>
+            <li class="fragment" data-fragment-index="3">e.g. <b class="definition">criterion: </b>$(1-2\tau)\geq 0$, which gives $\tau=\alpha \Delta t/ \Delta x \leq \frac{1}{2}$</li>
+          </ul>
+          <li class="fragment" data-fragment-index="4">A boundary node with convection:</li>
+          <div class="singleline-ca fragment" data-fragment-index="4">
+            $$\begin{aligned}
+            T_0^{i+1} = \textcolor{#b52025}{\left(1-2\tau-2\tau \frac{h \Delta x}{k}\right)}T_0^i+(2\tau)T_1^i+2\tau\frac{h\Delta x}{k}T_\infty+\frac{\tau\dot{g}_0^i(\Delta x)^2}{k}
+            \end{aligned}$$
+          </div>
+          <ul>
+            <li class="fragment" data-fragment-index="5">e.g. <b class="definition">criterion: </b>$\left(1-2\tau-2\tau \frac{h \Delta x}{k}\right)\geq 0$</li>
+          </ul>
+        </ul>
+      </ul>
 </section>
 
 <section>
@@ -338,8 +361,13 @@
 </section>
 
 <section>
-  <h3>Example</h3>
-<!--     <iframe width="1440" height="810" src="https://www.youtube.com/embed/_0MVKrRYIG8"></iframe> -->
+  <h3>Example (implicit)</h3>
+    <iframe width="1440" height="810" src="https://www.youtube.com/embed/wDjhRWqLKIE"></iframe>
+</section>
+
+<section>
+  <h3>Coding with MATLAB (implicit)</h3>
+    <iframe width="1440" height="810" src="https://www.youtube.com/embed/fNb_J2ZoqPY"></iframe>
 </section>
 
 <section>
