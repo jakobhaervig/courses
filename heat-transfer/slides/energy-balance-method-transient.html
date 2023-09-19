@@ -125,14 +125,14 @@
         </div>
       </ul>
       <div class="r-stack">
-        <img class="fragment" data-fragment-index="2" src="media/energy-balance-method-transient/energy-balance-interior-node-0.svg" height="600">
-        <img class="fragment" data-fragment-index="2" src="media/energy-balance-method-transient/energy-balance-interior-node-1.svg" height="600">
+        <img class="fragment" data-fragment-index="3" src="media/energy-balance-method-transient/energy-balance-interior-node-0.svg" height="600">
+        <img class="fragment" data-fragment-index="3" src="media/energy-balance-method-transient/energy-balance-interior-node-1.svg" height="600">
       </div>
     </div>
     <div class="col-6">
       <ul>
-        <li class="fragment" data-fragment-index="3"><b class="mycolor1">Implicit</b> method:</li>
-        <div class="singleline-ca fragment" data-fragment-index="3">
+        <li class="fragment" data-fragment-index="4"><b class="mycolor1">Implicit</b> method:</li>
+        <div class="singleline-ca fragment" data-fragment-index="4">
           <p class="mycolor1">
           $$
           \small
@@ -148,8 +148,8 @@
         </div>
       </ul>
       <div class="r-stack">
-        <img class="fragment" data-fragment-index="3" src="media/energy-balance-method-transient/energy-balance-interior-node-0.svg" height="600">
-        <img class="fragment" data-fragment-index="3" src="media/energy-balance-method-transient/energy-balance-interior-node-2.svg" height="600">
+        <img class="fragment" data-fragment-index="5" src="media/energy-balance-method-transient/energy-balance-interior-node-0.svg" height="600">
+        <img class="fragment" data-fragment-index="5" src="media/energy-balance-method-transient/energy-balance-interior-node-2.svg" height="600">
       </div>
     </div>
   </div>
@@ -167,13 +167,13 @@
           \dot{g}_\text{m}^iA\Delta x=\frac{\rho V c_p (T_m^{i+1}-T_m^i)}{\Delta t}
           \end{aligned}$$
         </div>
-        <li class="fragment" data-fragment-index="1">Re-arranging:</li>
+        <li class="fragment" data-fragment-index="1">Re-arranging and noting thermal diffusivity $\alpha=k/(\rho c_p)$:</li>
         <div class="singleline-ca fragment" data-fragment-index="1">
           $$\begin{aligned}
           \textcolor{#008000}{T_{m-1}^i}-2\textcolor{#008000}{T_{m}^i}+\textcolor{#008000}{T_{m+1}^i} + \frac{\dot{q}_m^i \Delta x^2}{k} = \frac{\Delta x^2}{\alpha \Delta t}\left(T_m^{i+1}-T_m^i\right)
           \end{aligned}$$
         </div>
-        <li class="fragment" data-fragment-index="2">Defining $\tau=\alpha\Delta t/\Delta x^2$:</li>
+        <li class="fragment" data-fragment-index="2">Defining mesh Fourier number $\tau=\alpha\Delta t/\Delta x^2$:</li>
         <div class="singleline-ca fragment" data-fragment-index="2">
           $$\begin{aligned}
           \textcolor{#008000}{T_{m-1}^i}-2\textcolor{#008000}{T_{m}^i}+\textcolor{#008000}{T_{m+1}^i} + \frac{\dot{q}_m^i \Delta x^2}{k} = \frac{1}{\tau}\left(T_m^{i+1}-T_m^i\right)
@@ -202,20 +202,20 @@
   <div class="grid">
     <div class="col-6">
       <ul>
-        <li>Energy balance at boundary node:</li>
+        <li>Energy balance for boundary node with convection:</li>
         <div class="singleline-ca">
           $$\begin{aligned}
           hA(T_\infty-\textcolor{#008000}{T_0^i}) + kA\frac{\textcolor{#008000}{T_1^i}-\textcolor{#008000}{T_0^i}}{\Delta x}+
           \dot{g}_\text{0}^iA\frac{\Delta x}{2}=\frac{\rho V c_p (T_0^{i+1}-T_0^i)}{\Delta t}
           \end{aligned}$$
         </div>
-        <li class="fragment" data-fragment-index="1">Re-arranging:</li>
+        <li class="fragment" data-fragment-index="1">Re-arranging and noting thermal diffusivity $\alpha=k/(\rho c_p)$:</li>
         <div class="singleline-ca fragment" data-fragment-index="1">
           $$\begin{aligned}
           \left(\frac{-2h\Delta x}{k}-2\right)\textcolor{#008000}{T_0^i}+2\textcolor{#008000}{T_{1}^i}+\left(\frac{-2h\Delta x}{k}\right)T_\infty+\dot{g}_0^i\frac{(\Delta x)^2}{k} = \frac{(\Delta x)^2}{\alpha \Delta t}\left(T_0^{i+1}-T_0^i\right)
           \end{aligned}$$
         </div>
-        <li class="fragment" data-fragment-index="2">Defining $\tau=\alpha\Delta t/\Delta x^2$:</li>
+        <li class="fragment" data-fragment-index="2">Defining mesh Fourier number $\tau=\alpha\Delta t/\Delta x^2$:</li>
         <div class="singleline-ca fragment" data-fragment-index="2">
           $$\begin{aligned}
           \left(\frac{-2h\Delta x}{k}-2\right)\textcolor{#008000}{T_0^i}+2\textcolor{#008000}{T_{1}^i}+\left(\frac{-2h\Delta x}{k}\right)T_\infty+\dot{g}_0^i\frac{(\Delta x)^2}{k} = \frac{1}{\tau}\left(T_0^{i+1}-T_0^i\right)
@@ -224,10 +224,10 @@
         <li class="fragment" data-fragment-index="3">Isolating the only unknown $\textcolor{#b52025}{T_m^{i+1}}$:</li>
         <div class="singleline-ca fragment" data-fragment-index="3">
           $$\begin{aligned}
-          \textcolor{#b52025}{T_0^{i+1}} = \left(1-2\tau-2\tau \frac{h \Delta x}{k}\right)\textcolor{#008000}{T_0^i}+(2\tau)\textcolor{#008000}{T_1^i}+2\tau\frac{h\Delta x}{k}T_\infty+\tau \frac{\tau\dot{g}_0^i(\Delta x)^2}{k}
+          \textcolor{#b52025}{T_0^{i+1}} = \left(1-2\tau-2\tau \frac{h \Delta x}{k}\right)\textcolor{#008000}{T_0^i}+(2\tau)\textcolor{#008000}{T_1^i}+2\tau\frac{h\Delta x}{k}T_\infty+\frac{\tau\dot{g}_0^i(\Delta x)^2}{k}
           \end{aligned}$$
         </div>
-        <li class="fragment" data-fragment-index="4">1 equation for boundary node with 1 unknown &#128513</li>
+        <li class="fragment" data-fragment-index="4">1 equation for each boundary node with 1 unknown &#128513</li>
       </ul>
     </div>
     <div class="col-6">
@@ -301,7 +301,7 @@
   <div class="grid">
     <div class="col-6">
       <ul>
-        <li>Energy balance at boundary node:</li>
+        <li>Energy balance for boundary node with convection:</li>
         <div class="singleline-ca">
           $$\begin{aligned}
           hA(T_\infty-\textcolor{#524fa1}{T_0^{i+1}}) + kA\frac{\textcolor{#524fa1}{T_1^{i+1}}-\textcolor{#524fa1}{T_0^{i+1}}}{\Delta x}+
