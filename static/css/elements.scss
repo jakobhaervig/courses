@@ -86,11 +86,15 @@ em {
 .singleline-la {
     display: flex;
     justify-content: left;
+    align-items: center;
+    align-content: center;
   }
 
   .singleline-ca {
     display: flex;
     justify-content: center;
+    align-items: center;
+    align-content: center;
   }
 
 .pad-top {

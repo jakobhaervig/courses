@@ -529,11 +529,15 @@ em {
 .singleline-la {
   display: flex;
   justify-content: left;
+  align-items: center;
+  align-content: center;
 }
 
 .singleline-ca {
   display: flex;
   justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .pad-top {
@@ -711,10 +715,12 @@ em {
 
 .katex.inline {
   margin-left: 0 !important;
+  align-items: center;
 }
 
 .katex {
   text-align: center;
+  align-items: center;
 }
 
 .text-center {
@@ -774,7 +780,7 @@ a.reference-like {
 }
 
 .mycolor0 {
-  color: #008000;
+  color: rgb(0, 128, 0);
 }
 
 .mycolor1 {
