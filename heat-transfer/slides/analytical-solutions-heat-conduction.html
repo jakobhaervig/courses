@@ -4,36 +4,40 @@
 </section>
 
 <section>
-  <h3>Why analytical solutions?</h3>
+  <h3>Why/why not analytical solutions?</h3>
   <div class="grid">
-    <div class="col-8">
+    <div class="col-6">
       <ul>
-        <li>The good</li>
+        <li>Limitations</li>
         <ul>
-          <li><b class="definition">Fast to compute</b>, e.g. doing millions of evaluations</li>
-          <li class="fragment" data-fragment-index="1"><b class="definition">Yield exact results</b>, e.g. excellent for verifying other numerical codes</li>
+          <li>Limited to <b class="definition">simplified geometries:</b></li>
+          <ul>
+            <li>Infinitely long plane wall</li>
+            <li>Infinitely long cylinder</li>
+            <li>Perfect sphere</li>
+          </ul>
+          <li class="fragment" data-fragment-index="1">Limited to <b class="definition">simple conditions with thermal symmetry:</b></li>
+          <ul class="fragment" data-fragment-index="1">
+            <li>Uniform and temperature-independent properties</li>
+            <li>Only convection on boundary with constant heat transfer coefficient, e.g. no heat generation inside, radiation on boundary etc</li>
+            <li>Uniform initial temperature</li>
+          </ul>
         </ul>
       </ul>
       <ul>
-        <li class="fragment" data-fragment-index="2">The bad</li>
+        <li class="fragment" data-fragment-index="2">Reasons to apply</li>
         <ul>
-          <li class="fragment" data-fragment-index="2">Limited to <b class="definition">simplified geometries:</b></li>
-          <ul class="fragment" data-fragment-index="2">
-            <li>Infinitely long plane wall</li>
-            <li>Infinitely long cylinderl</li>
-            <li>Perfect sphere</li>
-          </ul>
-          <li class="fragment" data-fragment-index="3">Limited to <b class="definition">simple conditions only:</b></li>
-          <ul class="fragment" data-fragment-index="3">
-            <li>Uniform and temperature-independent properties</li>
-            <li>No heat generation inside, radiation on boundary etc</li>
-            <li>Uniform initial temperature</li>
-            <li>Only convection on boundary with constant coefficient</li>
-          </ul>
+          <li class="fragment" data-fragment-index="2"><b class="definition">Fast to compute</b>, e.g. doing millions of evaluations</li>
+          <li class="fragment" data-fragment-index="3"><b class="definition">Yield exact results</b>, e.g. excellent for verifying numerical codes</li>
         </ul>
       </ul>
     </div>
-   <div class="col-4">
+   <div class="col-6">
+    <div class="r-stack">
+      <img src="media/analytical-solutions-heat-conduction/shapes-0.svg" height="800">
+      <img src="media/analytical-solutions-heat-conduction/shapes-1.svg" height="800">
+      <img class="fragment" data-fragment-index="1" src="media/analytical-solutions-heat-conduction/shapes-3.svg" height="800">
+    </div>
     </div>
   </div>
 </section>
@@ -106,6 +110,14 @@
           </div>
         </ul>
       </ul>
+    </div>
+    <div class="col-6">
+      <div class="r-stack">
+        <img src="media/analytical-solutions-heat-conduction/plane-wall-0.svg" height="800">
+        <img class="fragment" data-fragment-index="1" src="media/analytical-solutions-heat-conduction/plane-wall-1.svg" height="800">
+        <img class="fragment" data-fragment-index="2" src="media/analytical-solutions-heat-conduction/plane-wall-2.svg" height="800">
+        <img class="fragment" data-fragment-index="3" src="media/analytical-solutions-heat-conduction/plane-wall-3.svg" height="800">
+      </div>
     </div>
   </div>
 </section>
