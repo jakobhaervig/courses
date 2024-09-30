@@ -1,0 +1,183 @@
+<section>
+  <h2>Course in Heat Transfer</h2>
+  <h3>Topic: Natural convection</h3>
+</section>
+
+<!-- <section>
+  <h3>What are semi-infinite solids?</h3>
+  <div class="grid">
+    <div class="col-8">
+      <ul>
+        <li>An ideal body with a single plane surface (extends to infinity in all directions)</li>
+        <ul>
+          <li class="fragment" data-fragment-index="1">Obtained for really large bodies</li>
+          <li class="fragment" data-fragment-index="2">Obtained even for small bodies when looking over very short time intervals</li>
+        </ul>
+        <li class="fragment" data-fragment-index="3">Assumptions:</li>
+        <ul class="fragment" data-fragment-index="3">
+          <li>Constant properties</li>
+          <li>No heat generation</li>
+          <li>Uniform thermal condition on exposed surface</li>
+          <li>Initial uniform temperature $T_i$</li>
+        </ul>
+      </ul>
+    </div>
+   <div class="col-4">
+    <div class="r-stack">
+      <img src="media/semi-infinite-solids/sketch.svg" height="800"> 
+    </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Introducing a similarity variable</h3>
+  <div class="grid">
+    <div class="col-8">
+      <ul>
+        <li>An ideal body with a single plane surface (extends to infinity in all directions)</li>
+        <li>By infinity means: <b class="definition">temperature remains unaffected sufficiently deep inside body</b></li>
+        <ul>
+          <li>Obtained for really large bodies</li>
+          <li>Obtained even for small bodies when looking over very short time intervals</li>
+        </ul>
+        <li>Assumptions</li>
+        <ul>
+          <li>Constant properties</li>
+          <li>No heat generation</li>
+          <li>Uniform thermal condition on exposed surface</li>
+          <li>Initial uniform temperature $T_i$</li>
+        </ul>
+      </ul>
+    </div>
+   <div class="col-4">
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Four boundary condition types: 1. specified surface temperature</h3>
+  <div class="grid">
+    <div class="col-6">
+      <ul>
+        <li>Constant surface temperature $T_s(t)=const$:</li>
+        <div>
+          $$
+          \frac{T(x,t)-T_s}{T_i-T_s} = \text{erfc}\left(\frac{x}{2\sqrt{\alpha t}}\right)
+          $$
+        </div>
+        <li>Characteristics:</li> 
+        <ul>
+          <li><b class="definition">Surface temperature constant ($T(0,t) = const$)</b></li>
+          <li><b class="definition">Heat flux varying ($\partial T(0,t)/\partial x \neq 0$)</b></li>
+        </ul>
+      </ul>
+    </div>
+    <div class="col-6">
+      <div class="r-stack">
+        <img src="media/analytical-solutions-heat-conduction/plane-wall-0.svg" height="800">
+        <img class="fragment" data-fragment-index="1" src="media/analytical-solutions-heat-conduction/plane-wall-1.svg" height="800">
+        <img class="fragment" data-fragment-index="2" src="media/analytical-solutions-heat-conduction/plane-wall-2.svg" height="800">
+        <img class="fragment" data-fragment-index="3" src="media/analytical-solutions-heat-conduction/plane-wall-3.svg" height="800">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Four boundary condition types: 2. specified surface heat flux</h3>
+  <div class="grid">
+    <div class="col-6">
+      <ul>
+        <li>Constant surface heat flux $q_s(t)=const$:</li>
+        <div>
+          $$
+          T(x,t)-T_i = \frac{\dot{q}}{k}\left[\sqrt{\frac{4\alpha t}{\pi}}\text{exp}\left(-\frac{x^2}{4\alpha t}\right)-x~\text{erfc}\left(\frac{x}{2\sqrt{\alpha t}}\right)\right]
+          $$
+        </div>
+        <li>Characteristics:</li> 
+        <ul>
+          <li><b class="definition">Surface temperature not constant ($T(0,t) \neq const$)</b></li>
+          <li><b class="definition">Heat flux constant ($\partial T(0,t)/\partial x = const$)</b></li>
+        </ul>
+      </ul>
+    </div>
+    <div class="col-6">
+      <div class="r-stack">
+        <img src="media/analytical-solutions-heat-conduction/plane-wall-0.svg" height="800">
+        <img class="fragment" data-fragment-index="1" src="media/analytical-solutions-heat-conduction/plane-wall-1.svg" height="800">
+        <img class="fragment" data-fragment-index="2" src="media/analytical-solutions-heat-conduction/plane-wall-2.svg" height="800">
+        <img class="fragment" data-fragment-index="3" src="media/analytical-solutions-heat-conduction/plane-wall-3.svg" height="800">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Four boundary condition types: 3. specified convection at surface</h3>
+  <div class="grid">
+    <div class="col-6">
+      <ul>
+        <li>Convection at surface $q_s(t)=h[T_\infty-T(0,t)] = const$:</li>
+        <div>
+          $$
+          \frac{T(x,t)-T_i}{T_\infty-T_i} = \text{erfc}\left(\frac{x}{2\sqrt{\alpha t}}\right) - \text{exp}\left(\frac{h x}{k}+\frac{h^2\alpha t}{k^2}\right) \text{erfc}\left(\frac{x}{2\sqrt{\alpha t}}+\frac{h\sqrt{\alpha t}}{k} \right)
+          $$
+        </div>
+        <li>Characteristics:</li> 
+        <ul>
+          <li><b class="definition">Surface temperature not constant ($T(0,t) \neq const$)</b></li>
+          <li><b class="definition">Heat flux not constant ($\partial T(0,t)/\partial x \neq const$)</b></li>
+          <li><b class="definition">Max surface temperature capped by $T_\infty$</b></li>
+        </ul>
+      </ul>
+    </div>
+    <div class="col-6">
+      <div class="r-stack">
+        <img src="media/analytical-solutions-heat-conduction/plane-wall-0.svg" height="800">
+        <img class="fragment" data-fragment-index="1" src="media/analytical-solutions-heat-conduction/plane-wall-1.svg" height="800">
+        <img class="fragment" data-fragment-index="2" src="media/analytical-solutions-heat-conduction/plane-wall-2.svg" height="800">
+        <img class="fragment" data-fragment-index="3" src="media/analytical-solutions-heat-conduction/plane-wall-3.svg" height="800">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Four boundary condition types: 4. energy pulse at surface</h3>
+  <div class="grid">
+    <div class="col-6">
+      <ul>
+        <li>Sudden energy pulse, then insulation:</li>
+        <div>
+          $$
+          T(x,t)-T_i = \frac{e_s}{k\sqrt{\pi t/\alpha}}\text{exp}\left(-\frac{x^2}{4\alpha t}\right)
+          $$
+        </div>
+        <li>Characteristics:</li> 
+        <ul>
+          <li><b class="definition">Surface temperature not constant ($T(0,t) \neq const$)</b></li>
+          <li><b class="definition">Heat flux zero because insulation ($\partial T(0,t)/\partial x = 0$)</b></li>
+        </ul>
+      </ul>
+    </div>
+    <div class="col-6">
+      <div class="r-stack">
+        <img src="media/analytical-solutions-heat-conduction/plane-wall-0.svg" height="800">
+        <img class="fragment" data-fragment-index="1" src="media/analytical-solutions-heat-conduction/plane-wall-1.svg" height="800">
+        <img class="fragment" data-fragment-index="2" src="media/analytical-solutions-heat-conduction/plane-wall-2.svg" height="800">
+        <img class="fragment" data-fragment-index="3" src="media/analytical-solutions-heat-conduction/plane-wall-3.svg" height="800">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Example</h3>
+  <iframe width="1440" height="810" src="https://www.youtube.com/embed/EhWt8gasfds4ZGf54"></iframe>
+</section> -->
+
+<section>
+  <h2>Course in Heat Transfer</h2>
+  <h3>End of topic</h3>
+</section>
