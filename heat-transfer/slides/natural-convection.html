@@ -121,29 +121,32 @@
 </section>
 
 <section>
-  <h3>NaturalBoundary layers on vertical flat plates</h3>
+  <h3>Natural convection along vertical flat plate</h3>
   <div class="grid">
     <div class="col-8">
       <ul>
-        <li>Consider a small fluid element</li>
-        <li>It is defined as:</li>
-        <div>
-          $$
-          \beta = \frac{1}{V} \left(\frac{\partial V}{\partial T}\right)_P = -\frac{1}{\rho} \left(\frac{\partial \rho}{\partial T}\right)_P
-          $$
-        </div>
-        <li>In natural convection, $\beta$ affects the buoyancy force:</li>
-        <ul>
-          <li>Higher $\beta$ leads to stronger buoyancy forces.</li>
-          <li>Stronger buoyancy forces enhance fluid movement.</li>
-        </ul>
-        <li>For ideal gases, $\beta$ is constant and given by:</li>
-        <div>
-          $$
-          \beta_{ideal~gas} = \frac{1}{T}\hspace{30pt}(1/\text{K})
-          $$
-        </div>
+        <li>Consider fluid rising in the vicinity of hot vertical wall</li>
       </ul>
+      <ul>
+        <li>At the wall surface ($y=0$), we know:</li>
+        <ul>
+          <li>Velocity is zero at the surface, e.g. $u(x,0)=0$ and $v(x,0)=0$.</li>
+          <li>Temperature is constant, e.g. $T(x,0)=T_s$.</li>
+        </ul>
+        <li>Sufficiently far from the surface ($y\rightarrow \infty$), we know:</li>
+        <ul>
+          <li>Velocity decreases towards zero, e.g. $u(x,\infty) \rightarrow 0$.</li>
+          <li>Temperature decreases towards surroundings temperature, e.g. $T(x,\infty) \rightarrow T_\infty$.</li>
+        </ul>
+        <li>At the bottom ($x=0$), we know:</li>
+        <ul>
+          <li>Velocity is zero, e.g. $u(0,y)=0$.</li>
+          <li>Temperature is at surroundings temperature, e.g. $T(0,y)=T_\infty$.</li>
+        </ul>
+      </ul>
+      <div class="r-stack">
+        <img src="media/natural-convection/nc_interferometer.jpg" height="400">
+      </div>
     </div>
     <div class="col-4">
       <div class="r-stack">
@@ -153,8 +156,101 @@
   </div>
 </section>
 
+<section>
+  <h3>Equation of motion for natural convection</h3>
+  <div class="grid">
+    <div class="col-8">
+      <ul>
+        <li>Now consider small volume element in the boundary layer</li>
+      </ul>
+      <ul>
+        <li>Newton's second law:</li>
+        $$ \delta m \cdot a_x = F_x $$
+      </ul>
+      <ul>
+        <li>Re-writing the terms:</li>
+        <ul>
+          <li>Mass: $$ \delta m = \rho \delta x \delta y $$</li>
+          <li>Acceleration obtained by total diffential: $$ \text{d}u = \frac{\partial u}{\partial x} \text{d}x + \frac{\partial u}{\partial y} \text{d}y $$</li>
+          <ul>
+            <li> Then acceleration becomes (by dividing by $\text{d}t$): $$ a_x = \frac{\text{d}u}{\text{d}t} = \frac{\partial u}{\partial x} \frac{\text{d}x}{\text{d}t} + \frac{\partial u}{\partial y} \frac{\text{d}y}{\text{d}t} = \frac{\partial u}{\partial x}u + \frac{\partial u}{\partial y}v $$</li>
+          </ul>
+          <li>Force: $$ F_x = \left(\tau+\frac{\partial \tau}{\partial y} \text{d}y\right) - \tau + P - \left(P + \frac{\partial P}{\partial x} \text{d}x\right) - \rho g (\text{d}x \cdot \text{d}y) $$</li>
+        </ul>
+        <li>Inserting in Newton's second law equation, dividing by $\delta x \delta y$ and inserting $\tau=\mu(\partial u/\partial y)$:</li>
+        $$ \rho \left(\frac{\partial u}{\partial x}u + \frac{\partial u}{\partial y}v\right) = \mu \frac{\partial^2 u}{\partial y^2} - \frac{\partial P}{\partial x} - \rho g $$
+      </ul>
+    </div>
+    <div class="col-4">
+      <div class="r-stack">
+        <img src="media/natural-convection/volume_element.jpg" height="400">
+      </div>
+    </div>
+  </div>
+</section>
 
+<section>
+  <h3>Equation of motion for natural convection</h3>
+  <div class="grid">
+    <div class="col-8">
+      <ul>
+        <li>Far away from surface ($y\rightarrow \infty$), the velocity is zero and we obtain:$.</li>
+        $$ \frac{\partial P_\infty}{\partial x} = -\rho_\infty g $$
+      </ul>
+      <ul>
+        <li>Re-writing the terms:</li>
+        <ul>
+          <li>Mass: $$ \delta m = \rho \delta x \delta y $$</li>
+          <li>Acceleration obtained by total diffential: $$ \text{d}u = \frac{\partial u}{\partial x} \text{d}x + \frac{\partial u}{\partial y} \text{d}y $$</li>
+          <ul>
+            <li> Then acceleration becomes (by dividing by $\text{d}t$): $$ a_x = \frac{\text{d}u}{\text{d}t} = \frac{\partial u}{\partial x} \frac{\text{d}x}{\text{d}t} + \frac{\partial u}{\partial y} \frac{\text{d}y}{\text{d}t} = \frac{\partial u}{\partial x}u + \frac{\partial u}{\partial y}v $$</li>
+          </ul>
+          <li>Force: $$ F_x = \left(\tau+\frac{\partial \tau}{\partial y} \text{d}y\right) - \tau + P - \left(P + \frac{\partial P}{\partial x} \text{d}x\right) - \rho g (\text{d}x \cdot \text{d}y) $$</li>
+        </ul>
+        <li>Inserting the above in Newton's second law equation, dividing by $\delta x \delta y$ and inserting $\tau=\mu(\partial u/\partial y)$:</li>
+        $$ \rho \left(\frac{\partial u}{\partial x}u + \frac{\partial u}{\partial y}v\right) = \mu \frac{\partial^2 u}{\partial y^2} - \frac{\partial P}{\partial x} - \rho g $$
+      </ul>
+    </div>
+    <div class="col-4">
+      <div class="r-stack">
+        <img src="media/natural-convection/volume_element.jpg" height="400">
+      </div>
+    </div>
+  </div>
+</section>
 
+<section>
+  <h3>Transition to turbulence in natural convection</h3>
+  <div class="grid">
+    <div class="col-8">
+      <ul>
+        <li>Natural convection can transition from laminar to turbulent flow.</li>
+        <li>Depends on the dimensionless Grashof number (Gr):</li>
+        <ul>
+          <li>Defined as:
+            $$
+            \text{Gr} = \frac{g \beta (T_s - T_\infty) y^3}{\nu^2}
+            $$
+            where:
+            <ul>
+              <li>$g$ is the gravitational acceleration.</li>
+              <li>$\beta$ is the thermal expansion coefficient.</li>
+              <li>$(T_s - T_\infty)$ is the temperature difference between the surface and the surroundings.</li>
+              <li>$y$ is the vertical position on the plate (vertical position of plate).</li>
+              <li>$\nu$ is the kinematic viscosity.</li>
+            </ul>
+          </li>
+        </ul>
+        <li>For a vertical plate, the critical Grashof number is approx $10^9$.</li>
+      </ul>
+    </div>
+    <div class="col-4">
+      <div class="r-stack">
+        <img src="media/natural-convection/transition-turbulence.jpg" height="800">
+      </div>
+    </div>
+  </div>
+</section>
 
 <section>
   <h2>Course in Heat Transfer</h2>
