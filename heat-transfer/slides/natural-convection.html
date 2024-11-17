@@ -49,7 +49,7 @@
 </section>
 
 <section>
-  <h3>Comparison of Natural Convection with Other Heat Transfer Mechanisms</h3>
+  <h3>Comparison of natural convection with other heat transfer mechanisms</h3>
   <div class="grid">
     <div class="col-6">
       <ul>
@@ -88,7 +88,7 @@
 </section>
 
 <section>
-  <h3>Thermal Expansion Coefficient in Natural Convection</h3>
+  <h3>Thermal expansion coefficient in natural convection</h3>
   <div class="grid">
     <div class="col-6">
       <ul>
@@ -99,6 +99,12 @@
           \beta = \frac{1}{V} \left(\frac{\partial V}{\partial T}\right)_P = -\frac{1}{\rho} \left(\frac{\partial \rho}{\partial T}\right)_P
           $$
         </div>
+        <li>This may be re-written as:</li>
+          <div>
+            $$
+            \beta \approx -\frac{1}{\rho} \left(\frac{\Delta \rho}{\Delta T}\right) = -\frac{1}{\rho} \left(\frac{\rho_\infty-\rho}{T_\infty-T}\right)
+            $$
+          </div>
         <li>In natural convection, $\beta$ affects the buoyancy force:</li>
         <ul>
           <li>Higher $\beta$ leads to stronger buoyancy forces.</li>
@@ -194,21 +200,15 @@
   <div class="grid">
     <div class="col-8">
       <ul>
-        <li>Far away from surface ($y\rightarrow \infty$), the velocity is zero and we obtain:$.</li>
-        $$ \frac{\partial P_\infty}{\partial x} = -\rho_\infty g $$
-      </ul>
-      <ul>
-        <li>Re-writing the terms:</li>
-        <ul>
-          <li>Mass: $$ \delta m = \rho \delta x \delta y $$</li>
-          <li>Acceleration obtained by total diffential: $$ \text{d}u = \frac{\partial u}{\partial x} \text{d}x + \frac{\partial u}{\partial y} \text{d}y $$</li>
-          <ul>
-            <li> Then acceleration becomes (by dividing by $\text{d}t$): $$ a_x = \frac{\text{d}u}{\text{d}t} = \frac{\partial u}{\partial x} \frac{\text{d}x}{\text{d}t} + \frac{\partial u}{\partial y} \frac{\text{d}y}{\text{d}t} = \frac{\partial u}{\partial x}u + \frac{\partial u}{\partial y}v $$</li>
-          </ul>
-          <li>Force: $$ F_x = \left(\tau+\frac{\partial \tau}{\partial y} \text{d}y\right) - \tau + P - \left(P + \frac{\partial P}{\partial x} \text{d}x\right) - \rho g (\text{d}x \cdot \text{d}y) $$</li>
-        </ul>
-        <li>Inserting the above in Newton's second law equation, dividing by $\delta x \delta y$ and inserting $\tau=\mu(\partial u/\partial y)$:</li>
+        <li>From previous slide we have:</li>
         $$ \rho \left(\frac{\partial u}{\partial x}u + \frac{\partial u}{\partial y}v\right) = \mu \frac{\partial^2 u}{\partial y^2} - \frac{\partial P}{\partial x} - \rho g $$
+        <ul>
+          <li>Far away from surface ($y\rightarrow \infty$), the velocity is zero ($u=0$) and from the above we obtain:</li>
+          $$ \frac{\partial P_\infty}{\partial x} = -\rho_\infty g $$
+          <li>And previously we had $\rho_\infty-\rho=\rho\beta(T-T_\infty)$, which gives:</li>
+          $$ u \frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} = \nu \frac{\partial^2 u}{\partial y^2} + g\beta(T-T_\infty) $$
+          <li>.. which may seem complex. We will solve this using Computational Fluid Dynamics (CFD) later on &#128519;</li>
+        </ul>
       </ul>
     </div>
     <div class="col-4">
@@ -248,6 +248,215 @@
       <div class="r-stack">
         <img src="media/natural-convection/transition-turbulence.jpg" height="800">
       </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Natural convection over surfaces</h3>
+  <div class="grid">
+    <div class="col-8">
+      <ul>
+        <li>Generally, naturral convection on a surface depends on:</li>
+        <ul>
+          <li>Geometry</li>
+          <li>Orientation of surface</li>
+          <li>Variation of temperature</li>
+          <li>Thermophysical properties of fluid</li>
+        </ul>
+        <li>In most cases, experiments or numerical simulations are required.</li>
+        <li>Empirical correlations exist for many common geometries in terms of Rayleigh number (Ra):</li>
+        $$
+        \text{Ra} = \text{Gr} \cdot \text{Pr} = \frac{g \beta (T_s - T_\infty) L^3}{\nu \alpha}
+        $$
+        <ul>
+          <li>Heat transfer is then tabulated in terms of Nusselt number (Nu):</li>
+          $$
+          \text{Nu} = \frac{h L_c}{k}=C \cdot \text{Ra}_L^n
+          $$
+      </ul>
+    </div>
+    <div class="col-4">
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Example of empirical correlations from experiments</h3>
+  <div class="r-stack">
+    <img src="media/natural-convection/nc-correlations.jpg" height="800">
+  </div>
+</section>
+
+<section>
+  <div class="r-stack">
+    <img src="media/natural-convection/surface-correlations.jpg" height="1000">
+  </div>
+</section>
+
+<section>
+  <h3>Exercise: Heat loss from hot-water pipes</h3>
+  <div class="grid">
+    <div class="col-6">
+      <div class="r-stack">
+        <img src="media/natural-convection/example-hot-pipe.jpg" height="150">
+      </div>
+      <ul>
+        <li><b>Problem:</b> A 6 m long section of an 8 cm diameter horizontal hot water pipe passes through a large room whose temperature is 20$^\circ$C. If the outer surface temperature of the pipe is 70$^\circ$C, determine the rate of heat loss from the pipe by natural convection.</li>
+        <li><b>Assumptions:</b></li>
+        <ul>
+          <li>Steady state (room temperature is uniform and constant)</li>
+          <li>Air behaves as ideal gas</li>
+          <li>Local pressure is 1 atm</li>
+        </ul>
+        <li><b>Properties:</b></li>
+        <ul>
+          <li>Evaluate at film temperature, (70$^\circ$C+20$^\circ$C)/2=45$^\circ$C</li>
+          <li>Thermal conductivity $k=0.02699$ W/mK$</li>
+          <li>Prandtl number $\text{Pr}=0.7241$</li>
+          <li>Thermal expansion coefficient $\beta=1/T=1/318\text{ K}$</li>
+          <li>Kinematic viscosity $\nu=1.750\cdot 10^{-5}$ m$^2$/s</li>
+        </ul>
+        <li><b>Analysis:</b></li>
+        <ul>
+          <li>Find the Rayleigh number:
+            $$
+            \text{Ra}_D = \frac{g \beta (T_s - T_\infty) D^3}{\nu^2}=1.867\cdot 10^6
+            $$
+          </li>
+          <li>Find the equation for horisontal cylinders:
+          $$ 
+          \text{Nu} = \left(0.6 + \frac{0.387 \text{Ra}_D^{1/6}}{[1+(0.559/\text{Pr})^{9/16}]^{8/27}} \right)^2 = 17.39
+          $$
+          </li>
+        </ul>
+      </ul>
+    </div>
+    <div class="col-6">
+      <ul>
+      <li>Then we can find the heat transfer coefficient:
+        $$ 
+        h = \frac{k \text{Nu}}{D} = 5.867 \text{ W/m}^2\text{K}
+        $$
+        </li>
+        <li>And the heat transfer rate:
+          $$ 
+          \dot{Q} = h \cdot A_s \cdot (T_s-T_\infty) = 442 \text{ W}
+          $$
+          </li>
+        </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Natural convection on inclined and horisontal plates</h3>
+  <div class="grid">
+    <div class="col-6">
+      <div class="r-stack">
+        <img src="media/natural-convection/nc-inclined-plate.jpg" height="400">
+      </div>
+      <ul>
+        <li>Lower surface:</li>
+        <ul>
+          <li>Hot air can't more vertically, therefore forced along plate with reduced force $F_x=F\text{cos}(\theta)$</li>
+        </ul>
+        <li>Upper surface:</li>
+        <ul>
+          <li>Hot air can move freely along and away from surface. Complex flow with plumes of hot air form!</li>
+        </ul>
+      </ul>
+    </div>
+    <div class="col-6">
+      <div class="r-stack">
+        <img src="media/natural-convection/nc-horisontal-plate.jpg" height="400">
+      </div>
+      <ul>
+        <li>Lower surface:</li>
+        <ul>
+          <li>Hot air can't move upward and has to move to the side, e.g. low heat transfer rate</li>
+        </ul>
+        <li>Upper surface:</li>
+        <ul>
+          <li>Hot air can move freely away from surface, e.g. high heat transfer rate.</li>
+        </ul>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Natural convection inside enclosures</h3>
+  <div class="grid">
+    <div class="col-4">
+      <div class="r-stack">
+        <img src="media/natural-convection/nc-enclosure-vertical.jpg" height="400">
+      </div>
+      <ul>
+        <li>Vertical enclosures</li>
+        <ul>
+          <li>Fluid rises near hot side</li>
+          <li>Fluid falls near cold side</li>
+          <li>Result: High heat transfer rate</li>
+        </ul>
+      </ul>
+    </div>
+    <div class="col-8">
+      <div class="r-stack">
+        <img src="media/natural-convection/nc-enclosure-horisontal.jpg" height="400">
+      </div>
+      <ul>
+        <li>Horisontal enclosures (hot top side)</li>
+        <ul>
+          <li>No fluid motion (light fluid is already on top)</li>
+          <li>Result: Low heat transfer rate (pure conduction)</li>
+        </ul>
+        <li>Horisontal enclosure (cold top side):</li>
+        <ul>
+          <li>Low $\text{Ra}_L$: No fluid motion (heavy fluid stays on top)</li>
+          <li>High $\text{Ra}_L$: Fluid motion (circulation start to happen in Bernard cells)</li>
+          <li>Even higher $\text{Ra}_L$: Turbulent flow</li>
+          <li>Result: Higher $\text{Ra}_L$ gives higher heat transfer rate</li>
+        </ul>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Combined natural convection and forced convection</h3>
+  <div class="grid">
+    <div class="col-4">
+      <div class="r-stack">
+        <img src="media/natural-convection/nc-enclosure-vertical.jpg" height="400">
+      </div>
+      <ul>
+        <li>Vertical enclosures</li>
+        <ul>
+          <li>Fluid rises near hot side</li>
+          <li>Fluid falls near cold side</li>
+          <li>Result: High heat transfer rate</li>
+        </ul>
+      </ul>
+    </div>
+    <div class="col-8">
+      <div class="r-stack">
+        <img src="media/natural-convection/nc-enclosure-horisontal.jpg" height="400">
+      </div>
+      <ul>
+        <li>Horisontal enclosures (hot top side)</li>
+        <ul>
+          <li>No fluid motion (light fluid is already on top)</li>
+          <li>Result: Low heat transfer rate (pure conduction)</li>
+        </ul>
+        <li>Horisontal enclosure (cold top side):</li>
+        <ul>
+          <li>Low $\text{Ra}_L$: No fluid motion (heavy fluid stays on top)</li>
+          <li>High $\text{Ra}_L$: Fluid motion (circulation start to happen in Bernard cells)</li>
+          <li>Even higher $\text{Ra}_L$: Turbulent flow</li>
+          <li>Result: Higher $\text{Ra}_L$ gives higher heat transfer rate</li>
+        </ul>
+      </ul>
     </div>
   </div>
 </section>
