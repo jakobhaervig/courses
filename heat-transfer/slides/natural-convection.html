@@ -3,179 +3,463 @@
   <h3>Topic: Natural convection</h3>
 </section>
 
-<!-- <section>
-  <h3>What are semi-infinite solids?</h3>
+<section>
+  <h3>Introduction to Natural Convection</h3>
   <div class="grid">
     <div class="col-8">
       <ul>
-        <li>An ideal body with a single plane surface (extends to infinity in all directions)</li>
+        <li>Occurs due to density differences (caused by differences in temperature).</li>
+        <li>Key factors:</li>
         <ul>
-          <li class="fragment" data-fragment-index="1">Obtained for really large bodies</li>
-          <li class="fragment" data-fragment-index="2">Obtained even for small bodies when looking over very short time intervals</li>
-        </ul>
-        <li class="fragment" data-fragment-index="3">Assumptions:</li>
-        <ul class="fragment" data-fragment-index="3">
-          <li>Constant properties</li>
-          <li>No heat generation</li>
-          <li>Uniform thermal condition on exposed surface</li>
-          <li>Initial uniform temperature $T_i$</li>
+          <li>Temperature gradient</li>
+          <li>Fluid properties</li>
+          <li>Gravitational force</li>
         </ul>
       </ul>
     </div>
-   <div class="col-4">
-    <div class="r-stack">
-      <img src="media/semi-infinite-solids/sketch.svg" height="800"> 
-    </div>
+    <div class="col-4">
+      <div class="r-stack">
+        <img src="media/natural-convection/intro.svg" height="800">
+      </div>
     </div>
   </div>
 </section>
 
 <section>
-  <h3>Introducing a similarity variable</h3>
+  <h3>Applications of Natural Convection</h3>
+  <div class="grid">
+    <div class="col-6">
+      <ul>
+        <li>Natural convection plays a crucial role in various applications:</li>
+        <ul>
+          <li><b>Heating and Cooling Systems:</b> Used in radiators, heat exchangers, and HVAC systems.</li>
+          <li><b>Environmental Science:</b> Understanding weather patterns, ocean currents, and climate change.</li>
+          <li><b>Engineering Processes:</b> Cooling of electronic devices, nuclear reactors, and industrial processes.</li>
+          <li><b>Architecture:</b> Passive cooling and heating in buildings.</li>
+          <li><b>Biological Systems:</b> Blood circulation and respiratory systems.</li>
+        </ul>
+      </ul>
+    </div>
+    <div class="col-6">
+      <div class="r-stack">
+        <img src="media/natural-convection/applications.svg" height="800">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Comparison of natural convection with other heat transfer mechanisms</h3>
+  <div class="grid">
+    <div class="col-6">
+      <ul>
+        <li><b>Conduction:</b></li>
+        <ul>
+          <li>Heat transfer through a solid or stationary fluid.</li>
+          <li>Occurs due to temperature gradients.</li>
+          <li>Does not involve fluid movement.</li>
+        </ul>
+        <li><b>Forced Convection:</b></li>
+        <ul>
+          <li>Heat transfer through a moving fluid.</li>
+          <li>Involves external forces like fans or pumps.</li>
+          <li>Typically more efficient than natural convection.</li>
+        </ul>
+        <li><b>Radiation:</b></li>
+        <ul>
+          <li>Heat transfer through electromagnetic waves.</li>
+          <li>Does not require a medium (can occur in a vacuum).</li>
+          <li>Depends on surface properties and temperature.</li>
+        </ul>
+        <li><b>Natural Convection:</b></li>
+        <ul>
+          <li>Heat transfer through fluid movement due to density differences.</li>
+          <li>Occurs without external forces.</li>
+          <li>Less efficient than forced convection but important in many natural and engineering processes.</li>
+        </ul>
+      </ul>
+    </div>
+    <div class="col-6">
+      <div class="r-stack">
+        <img src="media/natural-convection/comparison.svg" height="800">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Thermal expansion coefficient in natural convection</h3>
+  <div class="grid">
+    <div class="col-6">
+      <ul>
+        <li>The thermal expansion coefficient ($\beta$) is a measure of how much a fluid expands when heated.</li>
+        <li>It is defined as:</li>
+        <div>
+          $$
+          \beta = \frac{1}{V} \left(\frac{\partial V}{\partial T}\right)_P = -\frac{1}{\rho} \left(\frac{\partial \rho}{\partial T}\right)_P
+          $$
+        </div>
+        <li>This may be re-written as:</li>
+          <div>
+            $$
+            \beta \approx -\frac{1}{\rho} \left(\frac{\Delta \rho}{\Delta T}\right) = -\frac{1}{\rho} \left(\frac{\rho_\infty-\rho}{T_\infty-T}\right)
+            $$
+          </div>
+        <li>In natural convection, $\beta$ affects the buoyancy force:</li>
+        <ul>
+          <li>Higher $\beta$ leads to stronger buoyancy forces.</li>
+          <li>Stronger buoyancy forces enhance fluid movement.</li>
+        </ul>
+        <li>For ideal gases, $\beta$ is constant and given by:</li>
+        <div>
+          $$
+          \beta_{ideal~gas} = \frac{1}{T}\hspace{30pt}(1/\text{K})
+          $$
+        </div>
+      </ul>
+    </div>
+    <div class="col-6">
+      <div class="r-stack">
+        <img src="media/natural-convection/thermal-expansion.svg" height="800">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Natural convection along vertical flat plate</h3>
   <div class="grid">
     <div class="col-8">
       <ul>
-        <li>An ideal body with a single plane surface (extends to infinity in all directions)</li>
-        <li>By infinity means: <b class="definition">temperature remains unaffected sufficiently deep inside body</b></li>
-        <ul>
-          <li>Obtained for really large bodies</li>
-          <li>Obtained even for small bodies when looking over very short time intervals</li>
-        </ul>
-        <li>Assumptions</li>
-        <ul>
-          <li>Constant properties</li>
-          <li>No heat generation</li>
-          <li>Uniform thermal condition on exposed surface</li>
-          <li>Initial uniform temperature $T_i$</li>
-        </ul>
+        <li>Consider fluid rising in the vicinity of hot vertical wall</li>
       </ul>
-    </div>
-   <div class="col-4">
-    </div>
-  </div>
-</section>
-
-<section>
-  <h3>Four boundary condition types: 1. specified surface temperature</h3>
-  <div class="grid">
-    <div class="col-6">
       <ul>
-        <li>Constant surface temperature $T_s(t)=const$:</li>
-        <div>
-          $$
-          \frac{T(x,t)-T_s}{T_i-T_s} = \text{erfc}\left(\frac{x}{2\sqrt{\alpha t}}\right)
-          $$
-        </div>
-        <li>Characteristics:</li> 
+        <li>At the wall surface ($y=0$), we know:</li>
         <ul>
-          <li><b class="definition">Surface temperature constant ($T(0,t) = const$)</b></li>
-          <li><b class="definition">Heat flux varying ($\partial T(0,t)/\partial x \neq 0$)</b></li>
+          <li>Velocity is zero at the surface, e.g. $u(x,0)=0$ and $v(x,0)=0$.</li>
+          <li>Temperature is constant, e.g. $T(x,0)=T_s$.</li>
+        </ul>
+        <li>Sufficiently far from the surface ($y\rightarrow \infty$), we know:</li>
+        <ul>
+          <li>Velocity decreases towards zero, e.g. $u(x,\infty) \rightarrow 0$.</li>
+          <li>Temperature decreases towards surroundings temperature, e.g. $T(x,\infty) \rightarrow T_\infty$.</li>
+        </ul>
+        <li>At the bottom ($x=0$), we know:</li>
+        <ul>
+          <li>Velocity is zero, e.g. $u(0,y)=0$.</li>
+          <li>Temperature is at surroundings temperature, e.g. $T(0,y)=T_\infty$.</li>
         </ul>
       </ul>
-    </div>
-    <div class="col-6">
       <div class="r-stack">
-        <img src="media/analytical-solutions-heat-conduction/plane-wall-0.svg" height="800">
-        <img class="fragment" data-fragment-index="1" src="media/analytical-solutions-heat-conduction/plane-wall-1.svg" height="800">
-        <img class="fragment" data-fragment-index="2" src="media/analytical-solutions-heat-conduction/plane-wall-2.svg" height="800">
-        <img class="fragment" data-fragment-index="3" src="media/analytical-solutions-heat-conduction/plane-wall-3.svg" height="800">
+        <img src="media/natural-convection/nc_interferometer.jpg" height="400">
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="r-stack">
+        <img src="media/natural-convection/nc_vertical_plate.jpg" height="800">
       </div>
     </div>
   </div>
 </section>
 
 <section>
-  <h3>Four boundary condition types: 2. specified surface heat flux</h3>
+  <h3>Equation of motion for natural convection</h3>
   <div class="grid">
-    <div class="col-6">
+    <div class="col-8">
       <ul>
-        <li>Constant surface heat flux $q_s(t)=const$:</li>
-        <div>
-          $$
-          T(x,t)-T_i = \frac{\dot{q}}{k}\left[\sqrt{\frac{4\alpha t}{\pi}}\text{exp}\left(-\frac{x^2}{4\alpha t}\right)-x~\text{erfc}\left(\frac{x}{2\sqrt{\alpha t}}\right)\right]
-          $$
-        </div>
-        <li>Characteristics:</li> 
+        <li>Now consider small volume element in the boundary layer</li>
+      </ul>
+      <ul>
+        <li>Newton's second law:</li>
+        $$ \delta m \cdot a_x = F_x $$
+      </ul>
+      <ul>
+        <li>Re-writing the terms:</li>
         <ul>
-          <li><b class="definition">Surface temperature not constant ($T(0,t) \neq const$)</b></li>
-          <li><b class="definition">Heat flux constant ($\partial T(0,t)/\partial x = const$)</b></li>
+          <li>Mass: $$ \delta m = \rho \delta x \delta y $$</li>
+          <li>Acceleration obtained by total diffential: $$ \text{d}u = \frac{\partial u}{\partial x} \text{d}x + \frac{\partial u}{\partial y} \text{d}y $$</li>
+          <ul>
+            <li> Then acceleration becomes (by dividing by $\text{d}t$): $$ a_x = \frac{\text{d}u}{\text{d}t} = \frac{\partial u}{\partial x} \frac{\text{d}x}{\text{d}t} + \frac{\partial u}{\partial y} \frac{\text{d}y}{\text{d}t} = \frac{\partial u}{\partial x}u + \frac{\partial u}{\partial y}v $$</li>
+          </ul>
+          <li>Force: $$ F_x = \left(\tau+\frac{\partial \tau}{\partial y} \text{d}y\right) - \tau + P - \left(P + \frac{\partial P}{\partial x} \text{d}x\right) - \rho g (\text{d}x \cdot \text{d}y) $$</li>
         </ul>
+        <li>Inserting in Newton's second law equation, dividing by $\delta x \delta y$ and inserting $\tau=\mu(\partial u/\partial y)$:</li>
+        $$ \rho \left(\frac{\partial u}{\partial x}u + \frac{\partial u}{\partial y}v\right) = \mu \frac{\partial^2 u}{\partial y^2} - \frac{\partial P}{\partial x} - \rho g $$
       </ul>
     </div>
-    <div class="col-6">
+    <div class="col-4">
       <div class="r-stack">
-        <img src="media/analytical-solutions-heat-conduction/plane-wall-0.svg" height="800">
-        <img class="fragment" data-fragment-index="1" src="media/analytical-solutions-heat-conduction/plane-wall-1.svg" height="800">
-        <img class="fragment" data-fragment-index="2" src="media/analytical-solutions-heat-conduction/plane-wall-2.svg" height="800">
-        <img class="fragment" data-fragment-index="3" src="media/analytical-solutions-heat-conduction/plane-wall-3.svg" height="800">
+        <img src="media/natural-convection/volume_element.jpg" height="400">
       </div>
     </div>
   </div>
 </section>
 
 <section>
-  <h3>Four boundary condition types: 3. specified convection at surface</h3>
+  <h3>Equation of motion for natural convection</h3>
   <div class="grid">
-    <div class="col-6">
+    <div class="col-8">
       <ul>
-        <li>Convection at surface $q_s(t)=h[T_\infty-T(0,t)] = const$:</li>
-        <div>
-          $$
-          \frac{T(x,t)-T_i}{T_\infty-T_i} = \text{erfc}\left(\frac{x}{2\sqrt{\alpha t}}\right) - \text{exp}\left(\frac{h x}{k}+\frac{h^2\alpha t}{k^2}\right) \text{erfc}\left(\frac{x}{2\sqrt{\alpha t}}+\frac{h\sqrt{\alpha t}}{k} \right)
-          $$
-        </div>
-        <li>Characteristics:</li> 
+        <li>From previous slide we have:</li>
+        $$ \rho \left(\frac{\partial u}{\partial x}u + \frac{\partial u}{\partial y}v\right) = \mu \frac{\partial^2 u}{\partial y^2} - \frac{\partial P}{\partial x} - \rho g $$
         <ul>
-          <li><b class="definition">Surface temperature not constant ($T(0,t) \neq const$)</b></li>
-          <li><b class="definition">Heat flux not constant ($\partial T(0,t)/\partial x \neq const$)</b></li>
-          <li><b class="definition">Max surface temperature capped by $T_\infty$</b></li>
+          <li>Far away from surface ($y\rightarrow \infty$), the velocity is zero ($u=0$) and from the above we obtain:</li>
+          $$ \frac{\partial P_\infty}{\partial x} = -\rho_\infty g $$
+          <li>And previously we had $\rho_\infty-\rho=\rho\beta(T-T_\infty)$, which gives:</li>
+          $$ u \frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} = \nu \frac{\partial^2 u}{\partial y^2} + g\beta(T-T_\infty) $$
+          <li>.. which may seem complex. We will solve this using Computational Fluid Dynamics (CFD) later on &#128519;</li>
         </ul>
       </ul>
     </div>
-    <div class="col-6">
+    <div class="col-4">
       <div class="r-stack">
-        <img src="media/analytical-solutions-heat-conduction/plane-wall-0.svg" height="800">
-        <img class="fragment" data-fragment-index="1" src="media/analytical-solutions-heat-conduction/plane-wall-1.svg" height="800">
-        <img class="fragment" data-fragment-index="2" src="media/analytical-solutions-heat-conduction/plane-wall-2.svg" height="800">
-        <img class="fragment" data-fragment-index="3" src="media/analytical-solutions-heat-conduction/plane-wall-3.svg" height="800">
+        <img src="media/natural-convection/volume_element.jpg" height="400">
       </div>
     </div>
   </div>
 </section>
 
 <section>
-  <h3>Four boundary condition types: 4. energy pulse at surface</h3>
+  <h3>Transition to turbulence in natural convection</h3>
   <div class="grid">
-    <div class="col-6">
+    <div class="col-8">
       <ul>
-        <li>Sudden energy pulse, then insulation:</li>
-        <div>
-          $$
-          T(x,t)-T_i = \frac{e_s}{k\sqrt{\pi t/\alpha}}\text{exp}\left(-\frac{x^2}{4\alpha t}\right)
-          $$
-        </div>
-        <li>Characteristics:</li> 
+        <li>Natural convection can transition from laminar to turbulent flow.</li>
+        <li>Depends on the dimensionless Grashof number (Gr):</li>
         <ul>
-          <li><b class="definition">Surface temperature not constant ($T(0,t) \neq const$)</b></li>
-          <li><b class="definition">Heat flux zero because insulation ($\partial T(0,t)/\partial x = 0$)</b></li>
+          <li>Defined as:
+            $$
+            \text{Gr} = \frac{g \beta (T_s - T_\infty) y^3}{\nu^2}
+            $$
+            where:
+            <ul>
+              <li>$g$ is the gravitational acceleration.</li>
+              <li>$\beta$ is the thermal expansion coefficient.</li>
+              <li>$(T_s - T_\infty)$ is the temperature difference between the surface and the surroundings.</li>
+              <li>$y$ is the vertical position on the plate (vertical position of plate).</li>
+              <li>$\nu$ is the kinematic viscosity.</li>
+            </ul>
+          </li>
         </ul>
+        <li>For a vertical plate, the critical Grashof number is approx $10^9$.</li>
       </ul>
     </div>
-    <div class="col-6">
+    <div class="col-4">
       <div class="r-stack">
-        <img src="media/analytical-solutions-heat-conduction/plane-wall-0.svg" height="800">
-        <img class="fragment" data-fragment-index="1" src="media/analytical-solutions-heat-conduction/plane-wall-1.svg" height="800">
-        <img class="fragment" data-fragment-index="2" src="media/analytical-solutions-heat-conduction/plane-wall-2.svg" height="800">
-        <img class="fragment" data-fragment-index="3" src="media/analytical-solutions-heat-conduction/plane-wall-3.svg" height="800">
+        <img src="media/natural-convection/transition-turbulence.jpg" height="800">
       </div>
     </div>
   </div>
 </section>
 
 <section>
-  <h3>Example</h3>
-  <iframe width="1440" height="810" src="https://www.youtube.com/embed/EhWt8gasfds4ZGf54"></iframe>
-</section> -->
+  <h3>Natural convection over surfaces</h3>
+  <div class="grid">
+    <div class="col-8">
+      <ul>
+        <li>Generally, naturral convection on a surface depends on:</li>
+        <ul>
+          <li>Geometry</li>
+          <li>Orientation of surface</li>
+          <li>Variation of temperature</li>
+          <li>Thermophysical properties of fluid</li>
+        </ul>
+        <li>In most cases, experiments or numerical simulations are required.</li>
+        <li>Empirical correlations exist for many common geometries in terms of Rayleigh number (Ra):</li>
+        $$
+        \text{Ra} = \text{Gr} \cdot \text{Pr} = \frac{g \beta (T_s - T_\infty) L^3}{\nu \alpha}
+        $$
+        <ul>
+          <li>Heat transfer is then tabulated in terms of Nusselt number (Nu):</li>
+          $$
+          \text{Nu} = \frac{h L_c}{k}=C \cdot \text{Ra}_L^n
+          $$
+      </ul>
+    </div>
+    <div class="col-4">
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Example of empirical correlations from experiments</h3>
+  <div class="r-stack">
+    <img src="media/natural-convection/nc-correlations.jpg" height="800">
+  </div>
+</section>
+
+<section>
+  <div class="r-stack">
+    <img src="media/natural-convection/surface-correlations.jpg" height="1000">
+  </div>
+</section>
+
+<section>
+  <h3>Exercise: Heat loss from hot-water pipes</h3>
+  <div class="grid">
+    <div class="col-6">
+      <div class="r-stack">
+        <img src="media/natural-convection/example-hot-pipe.jpg" height="150">
+      </div>
+      <ul>
+        <li><b>Problem:</b> A 6 m long section of an 8 cm diameter horizontal hot water pipe passes through a large room whose temperature is 20$^\circ$C. If the outer surface temperature of the pipe is 70$^\circ$C, determine the rate of heat loss from the pipe by natural convection.</li>
+        <li><b>Assumptions:</b></li>
+        <ul>
+          <li>Steady state (room temperature is uniform and constant)</li>
+          <li>Air behaves as ideal gas</li>
+          <li>Local pressure is 1 atm</li>
+        </ul>
+        <li><b>Properties:</b></li>
+        <ul>
+          <li>Evaluate at film temperature, (70$^\circ$C+20$^\circ$C)/2=45$^\circ$C</li>
+          <li>Thermal conductivity $k=0.02699$ W/mK$</li>
+          <li>Prandtl number $\text{Pr}=0.7241$</li>
+          <li>Thermal expansion coefficient $\beta=1/T=1/318\text{ K}$</li>
+          <li>Kinematic viscosity $\nu=1.750\cdot 10^{-5}$ m$^2$/s</li>
+        </ul>
+        <li><b>Analysis:</b></li>
+        <ul>
+          <li>Find the Rayleigh number:
+            $$
+            \text{Ra}_D = \frac{g \beta (T_s - T_\infty) D^3}{\nu^2}=1.867\cdot 10^6
+            $$
+          </li>
+          <li>Find the equation for horisontal cylinders:
+          $$ 
+          \text{Nu} = \left(0.6 + \frac{0.387 \text{Ra}_D^{1/6}}{[1+(0.559/\text{Pr})^{9/16}]^{8/27}} \right)^2 = 17.39
+          $$
+          </li>
+        </ul>
+      </ul>
+    </div>
+    <div class="col-6">
+      <ul>
+      <li>Then we can find the heat transfer coefficient:
+        $$ 
+        h = \frac{k \text{Nu}}{D} = 5.867 \text{ W/m}^2\text{K}
+        $$
+        </li>
+        <li>And the heat transfer rate:
+          $$ 
+          \dot{Q} = h \cdot A_s \cdot (T_s-T_\infty) = 442 \text{ W}
+          $$
+          </li>
+        </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Natural convection on inclined and horisontal plates</h3>
+  <div class="grid">
+    <div class="col-6">
+      <div class="r-stack">
+        <img src="media/natural-convection/nc-inclined-plate.jpg" height="400">
+      </div>
+      <ul>
+        <li>Lower surface:</li>
+        <ul>
+          <li>Hot air can't more vertically, therefore forced along plate with reduced force $F_x=F\text{cos}(\theta)$</li>
+        </ul>
+        <li>Upper surface:</li>
+        <ul>
+          <li>Hot air can move freely along and away from surface. Complex flow with plumes of hot air form!</li>
+        </ul>
+      </ul>
+    </div>
+    <div class="col-6">
+      <div class="r-stack">
+        <img src="media/natural-convection/nc-horisontal-plate.jpg" height="400">
+      </div>
+      <ul>
+        <li>Lower surface:</li>
+        <ul>
+          <li>Hot air can't move upward and has to move to the side, e.g. low heat transfer rate</li>
+        </ul>
+        <li>Upper surface:</li>
+        <ul>
+          <li>Hot air can move freely away from surface, e.g. high heat transfer rate.</li>
+        </ul>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Natural convection inside enclosures</h3>
+  <div class="grid">
+    <div class="col-4">
+      <div class="r-stack">
+        <img src="media/natural-convection/nc-enclosure-vertical.jpg" height="400">
+      </div>
+      <ul>
+        <li>Vertical enclosures</li>
+        <ul>
+          <li>Fluid rises near hot side</li>
+          <li>Fluid falls near cold side</li>
+          <li>Result: High heat transfer rate</li>
+        </ul>
+      </ul>
+    </div>
+    <div class="col-8">
+      <div class="r-stack">
+        <img src="media/natural-convection/nc-enclosure-horisontal.jpg" height="400">
+      </div>
+      <ul>
+        <li>Horisontal enclosures (hot top side)</li>
+        <ul>
+          <li>No fluid motion (light fluid is already on top)</li>
+          <li>Result: Low heat transfer rate (pure conduction)</li>
+        </ul>
+        <li>Horisontal enclosure (cold top side):</li>
+        <ul>
+          <li>Low $\text{Ra}_L$: No fluid motion (heavy fluid stays on top)</li>
+          <li>High $\text{Ra}_L$: Fluid motion (circulation start to happen in Bernard cells)</li>
+          <li>Even higher $\text{Ra}_L$: Turbulent flow</li>
+          <li>Result: Higher $\text{Ra}_L$ gives higher heat transfer rate</li>
+        </ul>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>Combined natural convection and forced convection</h3>
+  <div class="grid">
+    <div class="col-4">
+      <div class="r-stack">
+        <img src="media/natural-convection/nc-enclosure-vertical.jpg" height="400">
+      </div>
+      <ul>
+        <li>Vertical enclosures</li>
+        <ul>
+          <li>Fluid rises near hot side</li>
+          <li>Fluid falls near cold side</li>
+          <li>Result: High heat transfer rate</li>
+        </ul>
+      </ul>
+    </div>
+    <div class="col-8">
+      <div class="r-stack">
+        <img src="media/natural-convection/nc-enclosure-horisontal.jpg" height="400">
+      </div>
+      <ul>
+        <li>Horisontal enclosures (hot top side)</li>
+        <ul>
+          <li>No fluid motion (light fluid is already on top)</li>
+          <li>Result: Low heat transfer rate (pure conduction)</li>
+        </ul>
+        <li>Horisontal enclosure (cold top side):</li>
+        <ul>
+          <li>Low $\text{Ra}_L$: No fluid motion (heavy fluid stays on top)</li>
+          <li>High $\text{Ra}_L$: Fluid motion (circulation start to happen in Bernard cells)</li>
+          <li>Even higher $\text{Ra}_L$: Turbulent flow</li>
+          <li>Result: Higher $\text{Ra}_L$ gives higher heat transfer rate</li>
+        </ul>
+      </ul>
+    </div>
+  </div>
+</section>
 
 <section>
   <h2>Course in Heat Transfer</h2>
